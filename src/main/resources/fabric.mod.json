@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "bedrock-mechanics",
+  "version": "${version}",
+  "name": "Bedrock Mechanics",
+  "description": "A mod that add controller support and bedrock mechanics into Java Edition.",
+  "authors": [
+    "nekkan"
+  ],
+  "contact": {
+    "repo": "https://github.com/nekkan/bedrock-mechanics"
+  },
+  "license": "MIT",
+  "icon": "assets/bedrock-mechanics/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "gq.nkkx.bedrockmechanics.client.BedrockMechanicsClient"
+    ],
+    "main": [
+      "gq.nkkx.bedrockmechanics.BedrockMechanics"
+    ]
+  },
+  "mixins": [
+    "bedrock-mechanics.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
