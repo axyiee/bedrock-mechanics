@@ -3,12 +3,15 @@ package gq.nkkx.bedrockmechanics.controller;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWGamepadState;
 
+import java.util.Objects;
+
 /**
  * A class that represents a controller.
  */
 public class Controller {
 
     private final int id;
+    private String cachedName;
 
     public Controller(int id) {
         this.id = id;
@@ -29,7 +32,7 @@ public class Controller {
      *
      * @return The identifier for this controller.
      */
-    public int id() {
+    public int getId() {
         return id;
     }
 
@@ -39,13 +42,26 @@ public class Controller {
      * @return The GUID for this controller.
      * @throws IllegalStateException If the controller is not connected.
      */
-    public String guid() {
+    public String getGUID() {
         checkIfIsConnected();
         String guid = GLFW.glfwGetJoystickGUID(id);
         if (guid == null) {
             throw new UnknownError("An error occurred while attempting to get the controller GUID.");
         }
         return guid;
+    }
+
+    /**
+     * Get the name for this controller.
+     *
+     * @return The name for this controller.
+     */
+    public String getName() {
+        if (isConnected() && isGamepad()) {
+            cachedName = GLFW.glfwGetGamepadName(getId());
+            return cachedName;
+        }
+        return cachedName == null ? "" : cachedName;
     }
 
     /**
@@ -81,6 +97,22 @@ public class Controller {
     public boolean isGamepad() {
         checkIfIsConnected();
         return GLFW.glfwJoystickIsGamepad(id);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (!(object instanceof Controller)) {
+            return false;
+        }
+        return ((Controller) object).id == id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
 }
