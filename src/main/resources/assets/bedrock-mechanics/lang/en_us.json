@@ -1,0 +1,5 @@
+{
+  "text.autoconfig.bedrock-mechanics.title": "Bedrock Mechanics",
+  "bedrock-mechanics.controller.connected": "A controller has been connected",
+  "bedrock-mechanics.controller.disconnected": "A controller has been disconnected"
+}
