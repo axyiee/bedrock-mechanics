@@ -1,5 +1,6 @@
 package gq.nkkx.bedrockmechanics.client.mixin;
 
+import gq.nkkx.bedrockmechanics.controller.input.ControllerInputManager;
 import gq.nkkx.bedrockmechanics.controller.tasks.ControllerUpdateThread;
 import gq.nkkx.bedrockmechanics.controller.tasks.ControllersMappingsSetup;
 import net.minecraft.client.MinecraftClient;
@@ -14,6 +15,7 @@ public class MinecraftClientMixin {
     @Inject(method = "<init>", at = @At("RETURN"))
     private void bedrock_mechanics$init(CallbackInfo callbackInfo) {
         new ControllersMappingsSetup().run();
+        ControllerInputManager.init(MinecraftClient.getInstance().options);
         Thread thread = new ControllerUpdateThread();
         thread.setName("Controller Update");
         thread.setDaemon(true);

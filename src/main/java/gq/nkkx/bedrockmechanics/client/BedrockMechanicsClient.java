@@ -2,6 +2,7 @@ package gq.nkkx.bedrockmechanics.client;
 
 import gq.nkkx.bedrockmechanics.client.gui.provider.ControllerGuiProvider;
 import gq.nkkx.bedrockmechanics.controller.Controller;
+import gq.nkkx.bedrockmechanics.controller.tasks.ControllerTickListener;
 import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
@@ -16,6 +17,7 @@ public class BedrockMechanicsClient implements ClientModInitializer {
     public void onInitializeClient() {
         AutoConfig.register(BedrockMechanicsOptions.class, GsonConfigSerializer::new);
         AutoConfig.getGuiRegistry(BedrockMechanicsOptions.class).registerTypeProvider(new ControllerGuiProvider(), Controller.class);
+        new ControllerTickListener();
     }
 
 }
