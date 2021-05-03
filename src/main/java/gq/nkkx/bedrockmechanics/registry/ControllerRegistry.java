@@ -10,7 +10,6 @@ public class ControllerRegistry {
 
     private static final ControllerRegistry INSTANCE = new ControllerRegistry();
     private final Set<Controller> controllers;
-    private Controller selectedController;
 
     private ControllerRegistry() {
         controllers = new LinkedHashSet<>();
@@ -27,14 +26,6 @@ public class ControllerRegistry {
             .findFirst();
     }
 
-    public Optional<Controller> getSelectedController() {
-        return Optional.ofNullable(selectedController);
-    }
-
-    public void setSelectedController(Controller controller) {
-        this.selectedController = controller;
-    }
-
     public Set<Controller> getControllers() {
         return controllers;
     }
@@ -48,9 +39,6 @@ public class ControllerRegistry {
     }
 
     public void cleanup() {
-        if (selectedController != null && !selectedController.isConnected()) {
-            controllers.remove(selectedController);
-        }
         controllers.removeIf((controller) -> !controller.isConnected());
     }
 

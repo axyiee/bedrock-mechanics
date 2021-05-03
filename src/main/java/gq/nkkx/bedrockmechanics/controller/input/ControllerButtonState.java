@@ -2,15 +2,9 @@ package gq.nkkx.bedrockmechanics.controller.input;
 
 public enum ControllerButtonState {
 
-    NONE(0),
-    PRESS(1),
-    RELEASE(2);
-
-    public final int id;
-
-    ControllerButtonState(int id) {
-        this.id = id;
-    }
+    NONE,
+    PRESS,
+    RELEASE;
 
     public boolean isPressed() {
         return this == PRESS;

@@ -1,62 +1,86 @@
 package gq.nkkx.bedrockmechanics.controller.input;
 
+import lombok.*;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.options.GameOptions;
 import net.minecraft.client.options.KeyBinding;
 
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 
-import static org.lwjgl.glfw.GLFW.GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER;
-import static org.lwjgl.glfw.GLFW.GLFW_GAMEPAD_BUTTON_A;
+import static org.lwjgl.glfw.GLFW.*;
 
+@Getter
+@Builder
+@AllArgsConstructor
 public class ControllerButtonBinding {
 
     public static final Category MOVEMENT_CATEGORY = new Category("movement");
     public static final Category INVENTORY_CATEGORY = new Category("inventory");
     public static final Category GAMEPLAY_CATEGORY = new Category("gameplay");
 
-    public static final ControllerButtonBinding ATTACK = new Builder("attack", GAMEPLAY_CATEGORY)
-        .axis(GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER, true)
-        .onlyInGame()
-        .build();
+    public static final ControllerButtonBinding DROP_ITEM = builder()
+        .identifier("drop_item")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_B)
+        .supply(options -> options.keyDrop)
+        .build()
+        .add();
 
-    public static final ControllerButtonBinding JUMP = new Builder("jump", MOVEMENT_CATEGORY)
+    public static final ControllerButtonBinding JUMP = builder()
+        .identifier("jump")
+        .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_A)
-        .onlyInGame()
-        .build();
-    private final String name;
+        .supply(options -> options.keyJump)
+        .build()
+        .add();
+
+    public static final ControllerButtonBinding ATTACK = builder()
+        .identifier("attack")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER)
+        .supply(options -> options.keyAttack)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .build()
+        .add();
+
+    public static final ControllerButtonBinding USE = builder()
+        .identifier("use")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_TRIGGER)
+        .supply(options -> options.keyUse)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .build()
+        .add();
+
+    public static final ControllerButtonBinding MOVE_FORWARD = builder()
+        .identifier("move_forward")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
+        .isAxisPositive(false)
+        .isAxis(true)
+        .supply(options -> options.keyForward)
+        .build()
+        .add();
+
+    private final String identifier;
     private final Category category;
-    private final boolean accessOnlyInGame;
+
+    private final boolean isAxis;
+    private final boolean isAxisPositive;
+
+    @Builder.Default
+    private final AccessibleEnvironment environment = AccessibleEnvironment.IN_GAME;
+    @Getter(AccessLevel.NONE)
+    private final Function<GameOptions, KeyBinding> supply;
+    @Setter
     private int button;
 
-    public ControllerButtonBinding(int button, String name, Category category, boolean accessOnlyInGame) {
-        this.category = category;
-        this.name = name;
-        this.accessOnlyInGame = accessOnlyInGame;
-        setButton(button);
-    }
-
-    public boolean isOnlyInGame() {
-        return accessOnlyInGame;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getButton() {
-        return button;
-    }
-
-    public void setButton(int button) {
-        this.button = button;
-    }
-
     public Optional<KeyBinding> asKeyBinding() {
-        return ControllerInputManager.getKeybinding(this);
+        return Optional.ofNullable(supply.apply(MinecraftClient.getInstance().options));
     }
 
     @Override
@@ -68,25 +92,30 @@ public class ControllerButtonBinding {
             return false;
         }
         ControllerButtonBinding that = (ControllerButtonBinding) o;
-        return Objects.equals(name, that.name) && Objects.equals(category, that.category);
+        return Objects.equals(identifier, that.identifier) && Objects.equals(category, that.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, category);
+        return Objects.hash(identifier, category);
     }
 
+    private ControllerButtonBinding add() {
+        ControllerInputManager.registerBinding(this);
+        return this;
+    }
+
+    public enum AccessibleEnvironment {
+        OTHER_MENUS,
+        INVENTORY,
+        IN_GAME
+    }
+
+    @Getter
+    @AllArgsConstructor
     public static class Category {
 
         public final String name;
-
-        public Category(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
 
         @Override
         public boolean equals(Object o) {
@@ -99,41 +128,6 @@ public class ControllerButtonBinding {
         @Override
         public int hashCode() {
             return Objects.hash(name);
-        }
-
-    }
-
-    private static class Builder {
-
-        private final String name;
-        private final Category category;
-        private boolean accessOnlyInGame;
-        private int button;
-
-        public Builder(String name, Category category) {
-            this.category = category;
-            this.name = name;
-            this.accessOnlyInGame = false;
-        }
-
-        public Builder button(int button) {
-            this.button = button;
-            return this;
-        }
-
-        public Builder onlyInGame() {
-            this.accessOnlyInGame = true;
-            return this;
-        }
-
-        public Builder axis(int axis, boolean positive) {
-            return button(positive ? 100 + axis : 200 + axis);
-        }
-
-        public ControllerButtonBinding build() {
-            ControllerButtonBinding binding = new ControllerButtonBinding(button, name, category, accessOnlyInGame);
-            ControllerInputManager.registerBinding(binding);
-            return binding;
         }
 
     }

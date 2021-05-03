@@ -19,7 +19,7 @@ public class ControllerGuiProvider implements GuiProvider {
 
     @Override
     public List<AbstractConfigListEntry> get(String s, Field field, Object o, Object o1, GuiRegistryAccess guiRegistryAccess) {
-        Controller selectedController = BedrockMechanics.options().getSelectedController().orElse(null);
+        Controller selectedController = BedrockMechanics.options().getControllerOptions().getSelectedController();
         String defaultControllerName = selectedController != null ? selectedController.getName() : "";
         return Collections.singletonList(
             ConfigEntryBuilder.create()
@@ -34,7 +34,7 @@ public class ControllerGuiProvider implements GuiProvider {
                     if (controller.isPresent()) {
                         Controller c = controller.get();
                         BedrockMechanics.getLogger().info("Setting current controller to " + c.getId());
-                        BedrockMechanics.options().setSelectedController(c);
+                        BedrockMechanics.options().getControllerOptions().setSelectedController(c);
                     } else {
                         BedrockMechanics.getLogger().error("Couldn't find the controller named " + consumer);
                     }

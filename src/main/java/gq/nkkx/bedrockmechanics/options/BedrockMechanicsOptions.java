@@ -1,31 +1,20 @@
 package gq.nkkx.bedrockmechanics.options;
 
-import gq.nkkx.bedrockmechanics.controller.Controller;
-import me.shedaniel.autoconfig.ConfigData;
+import lombok.Getter;
 import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 
-import java.util.Optional;
-
+@Getter
 @Config(name = "bedrock-mechanics")
-public class BedrockMechanicsOptions implements ConfigData {
+public class BedrockMechanicsOptions extends PartitioningSerializer.GlobalData {
 
-    private double controllerDeadZone = 0.20;
-    private Controller selectedController;
+    @ConfigEntry.Category("controller-options")
+    @ConfigEntry.Gui.TransitiveObject
+    private final ControllerOptions controllerOptions = new ControllerOptions();
 
-    public Optional<Controller> getSelectedController() {
-        return Optional.ofNullable(selectedController);
-    }
-
-    public double getControllerDeadZone() {
-        return controllerDeadZone;
-    }
-
-    public void setControllerDeadZone(double controllerDeadZone) {
-        this.controllerDeadZone = controllerDeadZone;
-    }
-
-    public void setSelectedController(Controller controller) {
-        selectedController = controller;
-    }
+    @ConfigEntry.Category("mechanics-options")
+    @ConfigEntry.Gui.TransitiveObject
+    private final MechanicsOptions mechanicsOptions = new MechanicsOptions();
 
 }

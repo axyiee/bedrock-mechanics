@@ -1,5 +1,6 @@
 package gq.nkkx.bedrockmechanics.controller.tasks;
 
+import gq.nkkx.bedrockmechanics.registry.ControllerRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.toast.SystemToast;
 import net.minecraft.text.Text;
@@ -19,6 +20,7 @@ public class ControllerPopups implements Runnable {
                         Text.of("ID: " + id)
                     )
                 );
+                new ControllersSetup().run();
             } else if (event == GLFW.GLFW_DISCONNECTED) {
                 MinecraftClient.getInstance().getToastManager().add(
                     new SystemToast(
@@ -27,6 +29,7 @@ public class ControllerPopups implements Runnable {
                         Text.of("ID: " + id)
                     )
                 );
+                ControllerRegistry.getInstance().cleanup();
             }
         });
     }

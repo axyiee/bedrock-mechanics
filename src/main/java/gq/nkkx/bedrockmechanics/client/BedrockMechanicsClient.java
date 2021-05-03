@@ -2,10 +2,11 @@ package gq.nkkx.bedrockmechanics.client;
 
 import gq.nkkx.bedrockmechanics.client.gui.provider.ControllerGuiProvider;
 import gq.nkkx.bedrockmechanics.controller.Controller;
-import gq.nkkx.bedrockmechanics.controller.tasks.ControllerTickListener;
+import gq.nkkx.bedrockmechanics.controller.input.handlers.ControllerInputHandler;
 import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
 import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -15,9 +16,9 @@ public class BedrockMechanicsClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        AutoConfig.register(BedrockMechanicsOptions.class, GsonConfigSerializer::new);
+        AutoConfig.register(BedrockMechanicsOptions.class, PartitioningSerializer.wrap(Toml4jConfigSerializer::new));
         AutoConfig.getGuiRegistry(BedrockMechanicsOptions.class).registerTypeProvider(new ControllerGuiProvider(), Controller.class);
-        new ControllerTickListener();
+        new ControllerInputHandler();
     }
 
 }

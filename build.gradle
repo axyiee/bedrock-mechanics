@@ -17,6 +17,7 @@ repositories {
     maven {
         url "https://maven.terraformersmc.com/"
     }
+    mavenCentral()
 }
 
 dependencies {
@@ -35,6 +36,12 @@ dependencies {
     modApi include("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
+
+    compileOnly "org.projectlombok:lombok:1.18.20"
+    annotationProcessor "org.projectlombok:lombok:1.18.20"
+
+    testCompileOnly "org.projectlombok:lombok:1.18.20"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.20"
 }
 
 processResources {

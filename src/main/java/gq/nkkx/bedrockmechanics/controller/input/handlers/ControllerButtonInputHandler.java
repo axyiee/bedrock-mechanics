@@ -1,22 +1,22 @@
 package gq.nkkx.bedrockmechanics.controller.input.handlers;
 
-import gq.nkkx.bedrockmechanics.controller.input.ControllerButtonBinding;
 import gq.nkkx.bedrockmechanics.controller.input.ControllerButtonState;
 import gq.nkkx.bedrockmechanics.controller.input.ControllerInputManager;
-import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.MinecraftClient;
 
-import java.util.Optional;
-
-public class ControllerButtonInputHandler implements IControllerInputHandler {
+public class ControllerButtonInputHandler extends EnvironmentMatcher {
 
     public void handleInput(int button, ControllerButtonState buttonState) {
-        for (ControllerButtonBinding binding : ControllerInputManager.getBindings()) {
-            if (binding.getButton() == button) {
-                Optional<KeyBinding> keyBinding = binding.asKeyBinding();
-                keyBinding.ifPresent(value -> value.setPressed(buttonState.isPressed()));
-                break;
-            }
-        }
+        ControllerInputManager.getBindings()
+            .stream()
+            .filter(binding -> !binding.isAxis() && binding.getButton() == button)
+            .findFirst()
+            .ifPresent(binding -> {
+                if (matches(MinecraftClient.getInstance(), binding.getEnvironment())) {
+                    System.out.println("hello!");
+                    binding.asKeyBinding().ifPresent(keyBinding -> keyBinding.setPressed(buttonState.isPressed()));
+                }
+            });
     }
 
 }
