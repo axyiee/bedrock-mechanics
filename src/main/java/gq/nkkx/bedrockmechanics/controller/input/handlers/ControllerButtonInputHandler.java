@@ -1,8 +1,10 @@
 package gq.nkkx.bedrockmechanics.controller.input.handlers;
 
+import gq.nkkx.bedrockmechanics.client.accessor.IKeyBinding;
 import gq.nkkx.bedrockmechanics.controller.input.ControllerButtonState;
 import gq.nkkx.bedrockmechanics.controller.input.ControllerInputManager;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.options.StickyKeyBinding;
 
 public class ControllerButtonInputHandler extends EnvironmentMatcher {
 
@@ -14,7 +16,13 @@ public class ControllerButtonInputHandler extends EnvironmentMatcher {
             .ifPresent(binding -> {
                 if (matches(MinecraftClient.getInstance(), binding.getEnvironment())) {
                     System.out.println("hello!");
-                    binding.asKeyBinding().ifPresent(keyBinding -> keyBinding.setPressed(buttonState.isPressed()));
+                    binding.asKeyBinding().ifPresent(keyBinding -> {
+                        if (keyBinding instanceof StickyKeyBinding) {
+                            keyBinding.setPressed(buttonState.isPressed());
+                        } else {
+                            ((IKeyBinding) keyBinding).safePress(buttonState.isPressed());
+                        }
+                    });
                 }
             });
     }
