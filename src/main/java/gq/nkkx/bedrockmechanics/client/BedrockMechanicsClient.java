@@ -7,9 +7,14 @@ import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.client.MinecraftClient;
 
 @Environment(EnvType.CLIENT)
 public class BedrockMechanicsClient implements ClientModInitializer {
+
+    public static void render(MinecraftClient client) {
+        LookKeyBindingView.render(client);
+    }
 
     @Override
     public void onInitializeClient() {

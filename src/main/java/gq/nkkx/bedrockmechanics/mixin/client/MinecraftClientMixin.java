@@ -1,6 +1,6 @@
 package gq.nkkx.bedrockmechanics.mixin.client;
 
-import gq.nkkx.bedrockmechanics.BedrockMechanics;
+import gq.nkkx.bedrockmechanics.client.BedrockMechanicsClient;
 import gq.nkkx.bedrockmechanics.client.controller.input.ControllerInputManager;
 import gq.nkkx.bedrockmechanics.client.controller.tasks.ControllerUpdateThread;
 import gq.nkkx.bedrockmechanics.client.controller.tasks.ControllersMappingsSetup;
@@ -25,7 +25,7 @@ public class MinecraftClientMixin {
 
     @Inject(method = "render", at = @At("HEAD"))
     private void bedrock_mechanics$render(CallbackInfo callbackInfo) {
-        BedrockMechanics.render((MinecraftClient) (Object) this);
+        BedrockMechanicsClient.render((MinecraftClient) (Object) this);
     }
 
 }

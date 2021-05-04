@@ -21,8 +21,12 @@ public class BedrockMechanicsOptions extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Gui.TransitiveObject
     private final MechanicsOptions mechanicsOptions = new MechanicsOptions();
 
+    @ConfigEntry.Category("gui-options")
+    @ConfigEntry.Gui.TransitiveObject
+    private final GuiOptions guiOptions = new GuiOptions();
+
     public static void init() {
-        AutoConfig.register(BedrockMechanicsOptions.class, PartitioningSerializer.wrap(Toml4jConfigSerializer::new));
+        AutoConfig.register(BedrockMechanicsOptions.class, Toml4jConfigSerializer::new);
         AutoConfig.getGuiRegistry(BedrockMechanicsOptions.class).registerTypeProvider(new ControllerGuiProvider(), Controller.class);
     }
 
