@@ -18,9 +18,13 @@ public class ControllerInputHandler {
 
     private static final ControllerButtonInputHandler BUTTON_INPUT_HANDLER = new ControllerButtonInputHandler();
     private static final ControllerAxisInputHandler AXIS_INPUT_HANDLER = new ControllerAxisInputHandler();
+    private static final ControllerInputHandler INSTANCE = new ControllerInputHandler();
 
-    public ControllerInputHandler() {
-        ClientTickEvents.END_CLIENT_TICK.register(this::onTick);
+    private ControllerInputHandler() {
+    }
+
+    public static void init() {
+        ClientTickEvents.END_CLIENT_TICK.register(INSTANCE::onTick);
     }
 
     private void onTick(MinecraftClient minecraftClient) {

@@ -14,11 +14,8 @@ public abstract class KeyBindingMixin implements IKeyBinding {
     @Shadow
     private boolean pressed;
 
-    @Shadow
-    public abstract void setPressed(boolean pressed);
-
     private void safePress$press() {
-        this.pressed = true;
+        pressed = true;
         ++this.timesPressed;
     }
 
@@ -27,7 +24,7 @@ public abstract class KeyBindingMixin implements IKeyBinding {
     }
 
     @Override
-    public void safePress(boolean pressed) {
+    public void changeNonStickyPressState(boolean pressed) {
         if (pressed) {
             safePress$press();
         } else {

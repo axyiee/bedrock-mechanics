@@ -21,7 +21,7 @@ public class ControllerAxisInputHandler extends EnvironmentMatcher {
                             if (keyBinding instanceof StickyKeyBinding) {
                                 keyBinding.setPressed(buttonState.isPressed());
                             } else {
-                                ((IKeyBinding) keyBinding).safePress(buttonState.isPressed());
+                                ((IKeyBinding) keyBinding).changeNonStickyPressState(buttonState.isPressed());
                             }
                         });
                     }

@@ -1,5 +1,24 @@
 {
-  "text.autoconfig.bedrock-mechanics.title": "Bedrock Mechanics",
-  "bedrock-mechanics.controller.connected": "A controller has been connected",
-  "bedrock-mechanics.controller.disconnected": "A controller has been disconnected"
+  "bedrock-mechanics": {
+    "controller": {
+      "connected": "Controller connected",
+      "disconnected": "Controller disconnected"
+    },
+    "category": {
+      "gameplay": "Gameplay"
+    },
+    "bindings": {
+      "look_up": "Look Up",
+      "look_down": "Look Down",
+      "look_left": "Look Left",
+      "look_right": "Look Right"
+    }
+  },
+  "text": {
+    "autoconfig": {
+      "bedrock-mechanics": {
+        "title": "Bedrock Mechanics"
+      }
+    }
+  }
 }

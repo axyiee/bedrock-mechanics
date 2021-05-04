@@ -15,12 +15,11 @@ public class ControllerButtonInputHandler extends EnvironmentMatcher {
             .findFirst()
             .ifPresent(binding -> {
                 if (matches(MinecraftClient.getInstance(), binding.getEnvironment())) {
-                    System.out.println("hello!");
                     binding.asKeyBinding().ifPresent(keyBinding -> {
                         if (keyBinding instanceof StickyKeyBinding) {
                             keyBinding.setPressed(buttonState.isPressed());
                         } else {
-                            ((IKeyBinding) keyBinding).safePress(buttonState.isPressed());
+                            ((IKeyBinding) keyBinding).changeNonStickyPressState(buttonState.isPressed());
                         }
                     });
                 }
