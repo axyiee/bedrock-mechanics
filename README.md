@@ -1,6 +1,6 @@
 # bedrock-mechanics
 
-A client-side mod that add controller support and bedrock mechanics into Java Edition. The controller support should be
+A client-side mod for Fabric that ports Bedrock Edition mechanics to Java Edition. The controller support should be
 working on any controller by now.
 
 This project is in the experimental phase, so don't expect the latest versions to have many features. Snapshots can be

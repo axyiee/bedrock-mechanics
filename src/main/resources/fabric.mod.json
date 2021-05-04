@@ -3,7 +3,7 @@
   "id": "bedrock-mechanics",
   "version": "${version}",
   "name": "Bedrock Mechanics",
-  "description": "A client-side mod that add controller support and bedrock mechanics into Java Edition.",
+  "description": "A client-side mod for Fabric that ports Bedrock Edition mechanics to Java Edition.",
   "authors": [
     "nekkan"
   ],
