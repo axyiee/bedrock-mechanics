@@ -4,7 +4,7 @@
   "package": "gq.nkkx.bedrockmechanics.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "MinecraftClientMixin",
+    "client.MinecraftClientMixin",
     "client.options.KeyBindingMixin"
   ],
   "injectors": {

@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.mixin;
+package gq.nkkx.bedrockmechanics.mixin.client;
 
 import gq.nkkx.bedrockmechanics.client.controller.input.ControllerInputManager;
 import gq.nkkx.bedrockmechanics.client.controller.tasks.ControllerUpdateThread;
