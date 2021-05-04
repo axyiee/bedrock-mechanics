@@ -17,9 +17,6 @@
     "client": [
       "gq.nkkx.bedrockmechanics.client.BedrockMechanicsClient"
     ],
-    "main": [
-      "gq.nkkx.bedrockmechanics.BedrockMechanics"
-    ],
     "modmenu": [
       "gq.nkkx.bedrockmechanics.client.integration.ModMenuIntegration"
     ]

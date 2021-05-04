@@ -15,12 +15,14 @@ public class GuiOptions implements ConfigData {
 
     private boolean isPaperDollEnabled = true;
 
-    @ConfigEntry.BoundedDiscrete(min = 0, max = 1000)
-    @ConfigEntry.Gui.TransitiveObject
+    private boolean showPosition = true;
+
+    private boolean showFPS = false;
+
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
     private int guiPositionY = 20;
 
-    @ConfigEntry.BoundedDiscrete(min = 0, max = 1000)
-    @ConfigEntry.Gui.TransitiveObject
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
     private int guiPositionX = 20;
 
 }

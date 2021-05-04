@@ -1,4 +1,6 @@
 {
+  "bedrock-mechanics.hud.fps": "FPS: ",
+  "bedrock-mechanics.hud.position": "Position: ",
   "bedrock-mechanics.controller.connected": "Controller connected",
   "bedrock-mechanics.controller.disconnected": "Controller disconnected",
   "bedrock-mechanics.category.gameplay": "Gameplay",
