@@ -17,7 +17,7 @@ public class KeyBindingHandler {
         ClientTickEvents.END_CLIENT_TICK.register((client) -> {
             KEY_BINDINGS.forEach((keyBindingWrapper) -> {
                 while (keyBindingWrapper.getKeyBinding().wasPressed()) {
-                    keyBindingWrapper.execute();
+                    keyBindingWrapper.execute(client);
                 }
             });
         });

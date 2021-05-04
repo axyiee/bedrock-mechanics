@@ -1,18 +1,21 @@
 package gq.nkkx.bedrockmechanics.client.keybindings;
 
 import lombok.Builder;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.KeyBinding;
+
+import java.util.function.Consumer;
 
 public class KeyBindingWrapper {
 
     private final String name;
     private final String category;
     private final int key;
-    private final Runnable execute;
+    private final Consumer<MinecraftClient> execute;
     private KeyBinding value;
 
     @Builder
-    public KeyBindingWrapper(String name, String category, int key, Runnable execute) {
+    public KeyBindingWrapper(String name, String category, int key, Consumer<MinecraftClient> execute) {
         this.name = name;
         this.category = category;
         this.key = key;
@@ -28,9 +31,9 @@ public class KeyBindingWrapper {
         return value;
     }
 
-    public void execute() {
+    public void execute(MinecraftClient client) {
         if (execute != null) {
-            execute.run();
+            execute.accept(client);
         }
     }
 
