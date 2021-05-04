@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.MinecraftClientMixin",
+    "client.gui.hud.InGameHudMixin",
     "client.options.KeyBindingMixin"
   ],
   "injectors": {

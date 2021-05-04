@@ -19,10 +19,22 @@ public class GuiOptions implements ConfigData {
 
     private boolean showFPS = false;
 
-    @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
-    private int guiPositionY = 20;
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 180)
+    private int paperDollRotation = 20;
+
+    @ConfigEntry.BoundedDiscrete(min = 10, max = 50)
+    private int paperDollScale = 20;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
-    private int guiPositionX = 20;
+    private int guiPositionY = 50;
+
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
+    private int guiPositionX = 30;
+
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 50)
+    private int screenSafeArea = 0;
+
+    @ConfigEntry.ColorPicker
+    private int textColor = 0xffffff;
 
 }

@@ -9,16 +9,18 @@
   "bedrock-mechanics.bindings.look_left": "Look Left",
   "bedrock-mechanics.bindings.look_right": "Look Right",
   "text.autoconfig.bedrock-mechanics.title": "Bedrock Mechanics",
-  "text.autoconfig.bedrock-mechanics.category.controller-options": "Controller",
-  "text.autoconfig.bedrock-mechanics.option.controllerOptions.enabled": "Is enabled",
+  "text.autoconfig.bedrock-mechanics.category.controller-options": "Controller Support",
+  "text.autoconfig.bedrock-mechanics.option.controllerOptions.enabled": "Is Enabled",
   "text.autoconfig.bedrock-mechanics.option.controllerOptions.selectedController": "Selected controller",
   "text.autoconfig.bedrock-mechanics.option.controllerOptions.deadZone": "Dead Zone",
   "text.autoconfig.bedrock-mechanics.category.mechanics-options": "Mechanics",
   "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.allowFastBlockPlacement": "Allow fast block placement",
   "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.keyBindingLookSpeed": "Key binding look speed",
   "text.autoconfig.bedrock-mechanics.category.gui-options": "GUI",
-  "text.autoconfig.bedrock-mechanics.option.guiOptions.isEnabled": "Is enabled",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.isEnabled": "Is Enabled",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.isPaperDollEnabled": "Enable paper doll",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.guiPositionY": "Position (Y)",
-  "text.autoconfig.bedrock-mechanics.option.guiOptions.guiPositionX": "Position (X)"
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.guiPositionX": "Position (X)",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.showPosition": "Show Position",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.showFPS": "Show FPS"
 }
