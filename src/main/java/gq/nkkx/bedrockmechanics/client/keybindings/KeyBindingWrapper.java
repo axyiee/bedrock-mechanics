@@ -3,17 +3,28 @@ package gq.nkkx.bedrockmechanics.client.keybindings;
 import lombok.Builder;
 import net.minecraft.client.options.KeyBinding;
 
-@Builder
 public class KeyBindingWrapper {
 
-    private final KeyBinding value;
-    private Runnable execute;
+    private final String name;
+    private final String category;
+    private final int key;
+    private final Runnable execute;
+    private KeyBinding value;
 
-    public KeyBindingWrapper(KeyBinding keyBinding) {
-        this.value = keyBinding;
+    @Builder
+    public KeyBindingWrapper(String name, String category, int key, Runnable execute) {
+        this.name = name;
+        this.category = category;
+        this.key = key;
+        this.execute = execute;
     }
 
     public KeyBinding getKeyBinding() {
+        if (value == null) {
+            value = new KeyBinding(
+                "bedrock-mechanics.bindings." + name, key, "bedrock-mechanics.category." + category
+            );
+        }
         return value;
     }
 
