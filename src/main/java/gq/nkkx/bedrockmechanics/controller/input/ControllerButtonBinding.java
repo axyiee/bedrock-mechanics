@@ -60,9 +60,39 @@ public class ControllerButtonBinding {
         .identifier("move_forward")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
-        .isAxisPositive(false)
         .isAxis(true)
+        .isAxisPositive(false)
         .supply(options -> options.keyForward)
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding MOVE_BACKWARDS = builder()
+        .identifier("move_backwards")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .supply(options -> options.keyBack)
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding MOVE_RIGHT = builder()
+        .identifier("right")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_X)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .supply(options -> options.keyRight)
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding MOVE_LEFT = builder()
+        .identifier("move_left")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_X)
+        .isAxis(true)
+        .isAxisPositive(false)
+        .supply(options -> options.keyLeft)
         .build()
         .add();
 
