@@ -12,5 +12,6 @@
   "text.bedrock-mechanics.option.controllerOptions.selectedController": "Selected controller",
   "text.bedrock-mechanics.option.controllerOptions.deadZone": "Dead Zone",
   "text.bedrock-mechanics.category.controller.mechanics-options": "Mechanics",
-  "text.bedrock-mechanics.option.mechanicsOptions.allowFastBlockPlacement": "Allow fast block placement"
+  "text.bedrock-mechanics.option.mechanicsOptions.allowFastBlockPlacement": "Allow fast block placement",
+  "text.bedrock-mechanics.option.mechanicsOptions.keyBindingLookSpeed": "Key binding look speed"
 }

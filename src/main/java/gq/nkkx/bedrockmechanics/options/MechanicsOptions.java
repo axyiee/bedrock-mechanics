@@ -12,4 +12,6 @@ public class MechanicsOptions implements ConfigData {
 
     private boolean allowFastBlockPlacement = true;
 
+    private float keyBindingLookSpeed = 500.0f;
+
 }

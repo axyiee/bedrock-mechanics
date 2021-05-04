@@ -15,8 +15,9 @@ public class KeyBindingHandler {
 
     public static void init() {
         ClientTickEvents.END_CLIENT_TICK.register((client) -> {
+            LookKeybindView.clear();
             KEY_BINDINGS.forEach((keyBindingWrapper) -> {
-                while (keyBindingWrapper.getKeyBinding().wasPressed()) {
+                if (keyBindingWrapper.getKeyBinding().isPressed()) {
                     keyBindingWrapper.execute(client);
                 }
             });

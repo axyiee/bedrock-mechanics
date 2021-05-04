@@ -1,7 +1,9 @@
 package gq.nkkx.bedrockmechanics;
 
+import gq.nkkx.bedrockmechanics.client.keybindings.LookKeybindView;
 import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +23,10 @@ public class BedrockMechanics implements ModInitializer {
 
     public static Logger getLogger() {
         return LogManager.getLogger("gq.nkkx.bedrockmechanics.BedrockMechanics");
+    }
+
+    public static void render(MinecraftClient client) {
+        LookKeybindView.render(client);
     }
 
     @Override
