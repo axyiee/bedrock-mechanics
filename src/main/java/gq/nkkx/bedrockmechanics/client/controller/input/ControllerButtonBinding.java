@@ -1,5 +1,6 @@
 package gq.nkkx.bedrockmechanics.client.controller.input;
 
+import gq.nkkx.bedrockmechanics.client.keybindings.LookKeyBindingView;
 import lombok.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.GameOptions;
@@ -86,6 +87,15 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
+    public static final ControllerButtonBinding LOOK_UP = builder()
+        .identifier("look_up")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_RIGHT_Y)
+        .isAxis(true)
+        .isAxisPositive(false)
+        .supply(options -> LookKeyBindingView.LOOK_UP.getKeyBinding())
+        .build()
+        .add();
     private static final ControllerButtonBinding MOVE_LEFT = builder()
         .identifier("move_left")
         .category(MOVEMENT_CATEGORY)
@@ -93,6 +103,43 @@ public class ControllerButtonBinding {
         .isAxis(true)
         .isAxisPositive(false)
         .supply(options -> options.keyLeft)
+        .build()
+        .add();
+    private static final ControllerButtonBinding LOOK_DOWN = builder()
+        .identifier("look_down")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_RIGHT_Y)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .supply(options -> LookKeyBindingView.LOOK_DOWN.getKeyBinding())
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding LOOK_RIGHT = builder()
+        .identifier("look_right")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_RIGHT_X)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .supply(options -> LookKeyBindingView.LOOK_RIGHT.getKeyBinding())
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding LOOK_LEFT = builder()
+        .identifier("look_left")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_RIGHT_X)
+        .isAxis(true)
+        .isAxisPositive(false)
+        .supply(options -> LookKeyBindingView.LOOK_LEFT.getKeyBinding())
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding OPEN_INVENTORY = builder()
+        .identifier("open_inventory")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_Y)
+        .supply(options -> options.keyInventory)
         .build()
         .add();
 

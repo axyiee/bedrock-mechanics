@@ -1,6 +1,6 @@
 package gq.nkkx.bedrockmechanics;
 
-import gq.nkkx.bedrockmechanics.client.keybindings.LookKeybindView;
+import gq.nkkx.bedrockmechanics.client.keybindings.LookKeyBindingView;
 import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.MinecraftClient;
@@ -26,7 +26,7 @@ public class BedrockMechanics implements ModInitializer {
     }
 
     public static void render(MinecraftClient client) {
-        LookKeybindView.render(client);
+        LookKeyBindingView.render(client);
     }
 
     @Override

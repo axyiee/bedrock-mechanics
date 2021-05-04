@@ -11,7 +11,7 @@ import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
  * A utility class that adds key bindings to look in 4 directions in order to provide a easier way to make
  * the controller support easier.
  */
-public class LookKeybindView implements IKeyBindingView {
+public class LookKeyBindingView implements IKeyBindingView {
 
     private static double PITCH;
     public static KeyBindingWrapper LOOK_UP = KeyBindingWrapper.builder()
