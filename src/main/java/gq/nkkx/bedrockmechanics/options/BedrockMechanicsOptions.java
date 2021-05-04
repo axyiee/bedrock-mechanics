@@ -4,14 +4,14 @@ import gq.nkkx.bedrockmechanics.client.controller.Controller;
 import gq.nkkx.bedrockmechanics.client.gui.provider.ControllerGuiProvider;
 import lombok.Getter;
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 
 @Getter
 @Config(name = "bedrock-mechanics")
-public class BedrockMechanicsOptions extends PartitioningSerializer.GlobalData {
+public class BedrockMechanicsOptions implements ConfigData {
 
     @ConfigEntry.Category("controller-options")
     @ConfigEntry.Gui.TransitiveObject

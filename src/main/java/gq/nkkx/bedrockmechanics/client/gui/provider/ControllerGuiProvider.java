@@ -20,7 +20,7 @@ public class ControllerGuiProvider implements GuiProvider {
     @Override
     public List<AbstractConfigListEntry> get(String s, Field field, Object o, Object o1, GuiRegistryAccess guiRegistryAccess) {
         Controller selectedController = BedrockMechanics.options().getControllerOptions().getSelectedController();
-        String defaultControllerName = selectedController != null ? selectedController.getName() : "";
+        String defaultControllerName = selectedController == null ? "" : selectedController.getName();
         return Collections.singletonList(
             ConfigEntryBuilder.create()
                 .startStringDropdownMenu(new TranslatableText(s), defaultControllerName)

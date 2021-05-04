@@ -19,10 +19,10 @@ public class ControllerRegistry {
         return INSTANCE;
     }
 
-    public Optional<Controller> withId(int id) {
+    public Optional<Controller> withName(String name) {
         return getControllers()
             .stream()
-            .filter((controller) -> controller.getId() == id)
+            .filter(controller -> controller.getName().equals(name))
             .findFirst();
     }
 

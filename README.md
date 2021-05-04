@@ -20,21 +20,22 @@ List of planned resources. Those that have already been added are marked with a 
   * [x] Basic stuff, such as axis and button handling. This includes some essential bindings (walk, look, drop item,
     etc.)
   * [ ] Inventory interaction support
-   * [ ] Other menus interaction support
+  * [ ] Other menus interaction support
+* [X] Paper doll
+* [X] Show location and FPS under paper doll
 * [ ] Bedrock water color tint
-* [ ] Touchscreen support
-* [ ] Paper doll
 * [ ] Bedrock Edition exclusive animations
-   * [ ] Drowned swimming animation
-   * [ ] Eating animation
-   * [ ] Burning animation
-   * [ ] Suffocation animation
-   * [ ] Nether portal entering animation
-   * [ ] Steve and Alex eye blinking
-   * [ ] Fade-in chunk loading
-      * [ ] Support for Sodium
-      * [ ] Support for OptiFabric
+  * [ ] Drowned swimming animation
+  * [ ] Eating animation
+  * [ ] Burning animation
+  * [ ] Suffocation animation
+  * [ ] Nether portal entering animation
+  * [ ] Steve and Alex eye blinking
+  * [ ] Fade-in chunk loading
+    * [ ] Support for Sodium
+    * [ ] Support for OptiFabric
 * [ ] Bedrock mechanics
-   * [ ] Sneaking activates shield
-   * [ ] Accurate effect timer (don't show it as infinite)
-* [ ] Show location and FPS under paper doll
+  * [ ] Sneaking activates shield
+  * [ ] Accurate effect timer (don't show it as infinite)
+  * [ ] Accurate block placement (in order to better implement the front block placing)
+  * [ ] Front block placing

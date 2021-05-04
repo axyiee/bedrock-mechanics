@@ -12,6 +12,8 @@ import static net.minecraft.entity.EntityPose.SWIMMING;
 
 public class PaperDollRenderer implements IRenderer {
 
+    private static final int PADDING_X = 20;
+    private static final int PADDING_Y = 45;
     private long lastTimeShown;
 
     @Override
@@ -32,8 +34,9 @@ public class PaperDollRenderer implements IRenderer {
 
             GuiOptions options = options().getGuiOptions();
 
-            int basePosY = options.getGuiPositionY(), paperDollScale = options.getPaperDollScale();
-            int posX = options.getGuiPositionX() + options.getScreenSafeArea();
+            int basePosY = options.getGuiPositionY() + options.getScreenSafeArea() + PADDING_Y, paperDollScale = options.getPaperDollScale();
+            int posX = options.getGuiPositionX() + options.getScreenSafeArea() + PADDING_X;
+
             int posY = (player.isFallFlying()
                 ? (int) (basePosY - Math.ceil(paperDollScale * 2 * ((90 + player.pitch) / 180)))
                 : (player.isSwimming() ? basePosY - paperDollScale : basePosY)) + options.getScreenSafeArea();

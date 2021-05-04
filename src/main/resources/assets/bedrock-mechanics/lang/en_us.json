@@ -19,8 +19,12 @@
   "text.autoconfig.bedrock-mechanics.category.gui-options": "GUI",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.isEnabled": "Is Enabled",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.isPaperDollEnabled": "Enable paper doll",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.paperDollRotation": "Paper doll rotation",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.paperDollScale": "Paper doll scale",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.guiPositionY": "Position (Y)",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.guiPositionX": "Position (X)",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.showPosition": "Show Position",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.screenSafeArea": "Screen Safe Area",
+  "text.autoconfig.bedrock-mechanics.option.guiOptions.textColor": "Text Color",
   "text.autoconfig.bedrock-mechanics.option.guiOptions.showFPS": "Show FPS"
 }

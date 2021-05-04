@@ -1,5 +1,6 @@
 package gq.nkkx.bedrockmechanics.client.gui;
 
+import gq.nkkx.bedrockmechanics.client.gui.hud.BedrockMechanicsHUD;
 import gq.nkkx.bedrockmechanics.client.gui.paperdoll.PaperDoll;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
@@ -14,7 +15,8 @@ public class GuiRenderer {
         if (client.options.debugEnabled || client.options.hudHidden) {
             return;
         }
-        PaperDoll.getRenderer().render(matrices);
+        PaperDoll.RENDERER.render(matrices);
+        BedrockMechanicsHUD.RENDERER.render(matrices);
     }
 
 }

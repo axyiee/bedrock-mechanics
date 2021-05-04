@@ -18,10 +18,10 @@ public class BedrockMechanicsClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        LookKeyBindingView.init();
-        KeyBindingHandler.init();
         BedrockMechanicsOptions.init();
         ControllerInputHandler.init();
+        LookKeyBindingView.init();
+        KeyBindingHandler.init();
     }
 
 }

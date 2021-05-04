@@ -1,21 +1,18 @@
 package gq.nkkx.bedrockmechanics;
 
 import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
-import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class BedrockMechanics {
 
-    public static final String MOD_ID = "bedrock-mechanics";
-    private static final BedrockMechanicsOptions options = new BedrockMechanicsOptions();
+    private static BedrockMechanicsOptions OPTIONS;
 
     public static BedrockMechanicsOptions options() {
-        return options;
-    }
-
-    public static Identifier locate(String value) {
-        return new Identifier(MOD_ID, value);
+        if (OPTIONS == null) {
+            OPTIONS = new BedrockMechanicsOptions();
+        }
+        return OPTIONS;
     }
 
     public static Logger getLogger() {

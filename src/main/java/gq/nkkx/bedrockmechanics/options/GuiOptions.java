@@ -25,11 +25,11 @@ public class GuiOptions implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 10, max = 50)
     private int paperDollScale = 20;
 
-    @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
-    private int guiPositionY = 50;
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 200)
+    private int guiPositionY = 5;
 
-    @ConfigEntry.BoundedDiscrete(min = 0, max = 500)
-    private int guiPositionX = 30;
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 200)
+    private int guiPositionX = 5;
 
     @ConfigEntry.BoundedDiscrete(min = 0, max = 50)
     private int screenSafeArea = 0;

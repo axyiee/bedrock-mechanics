@@ -9,15 +9,14 @@ import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
  */
 public class PaperDoll {
 
-    private static final PaperDollRenderer RENDERER = new PaperDollRenderer();
+    public static final PaperDollRenderer RENDERER = new PaperDollRenderer();
+
+    private PaperDoll() {
+    }
 
     public static boolean isEnabled() {
         GuiOptions options = options().getGuiOptions();
         return options.isEnabled() && options.isPaperDollEnabled();
-    }
-
-    public static PaperDollRenderer getRenderer() {
-        return RENDERER;
     }
 
 }

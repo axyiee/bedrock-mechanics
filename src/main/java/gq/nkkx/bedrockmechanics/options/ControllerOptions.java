@@ -13,15 +13,8 @@ public class ControllerOptions implements ConfigData {
 
     private boolean enabled = true;
 
-    private Controller selectedController;
+    private Controller selectedController = null;
 
     private float deadZone = 0.25f;
-
-    @Override
-    public void validatePostLoad() throws ValidationException {
-        if (deadZone < 0.25f) {
-            throw new ValidationException("The dead zone must be at least 0.25.");
-        }
-    }
 
 }
