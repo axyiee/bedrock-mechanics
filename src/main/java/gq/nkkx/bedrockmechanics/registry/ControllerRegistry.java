@@ -1,6 +1,6 @@
 package gq.nkkx.bedrockmechanics.registry;
 
-import gq.nkkx.bedrockmechanics.controller.Controller;
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
 
 import java.util.LinkedHashSet;
 import java.util.Optional;

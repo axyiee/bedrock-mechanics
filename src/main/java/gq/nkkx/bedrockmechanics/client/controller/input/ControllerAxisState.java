@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.controller.input;
+package gq.nkkx.bedrockmechanics.client.controller.input;
 
 public enum ControllerAxisState {
 

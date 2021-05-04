@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.client.mixin.options;
+package gq.nkkx.bedrockmechanics.mixin.client.options;
 
 import gq.nkkx.bedrockmechanics.client.accessor.IKeyBinding;
 import net.minecraft.client.options.KeyBinding;

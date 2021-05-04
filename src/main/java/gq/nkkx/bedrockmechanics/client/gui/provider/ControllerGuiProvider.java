@@ -1,7 +1,7 @@
 package gq.nkkx.bedrockmechanics.client.gui.provider;
 
 import gq.nkkx.bedrockmechanics.BedrockMechanics;
-import gq.nkkx.bedrockmechanics.controller.Controller;
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
 import gq.nkkx.bedrockmechanics.registry.ControllerRegistry;
 import me.shedaniel.autoconfig.gui.registry.api.GuiProvider;
 import me.shedaniel.autoconfig.gui.registry.api.GuiRegistryAccess;

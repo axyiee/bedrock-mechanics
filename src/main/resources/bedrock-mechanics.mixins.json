@@ -1,11 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "gq.nkkx.bedrockmechanics.client.mixin",
+  "package": "gq.nkkx.bedrockmechanics.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "MinecraftClientMixin",
-    "options.KeyBindingMixin"
+    "client.options.KeyBindingMixin"
   ],
   "injectors": {
     "defaultRequire": 1

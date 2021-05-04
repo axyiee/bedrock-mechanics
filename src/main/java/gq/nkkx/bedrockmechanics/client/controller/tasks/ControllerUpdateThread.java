@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.controller.tasks;
+package gq.nkkx.bedrockmechanics.client.controller.tasks;
 
 import gq.nkkx.bedrockmechanics.BedrockMechanics;
 import gq.nkkx.bedrockmechanics.registry.ControllerRegistry;

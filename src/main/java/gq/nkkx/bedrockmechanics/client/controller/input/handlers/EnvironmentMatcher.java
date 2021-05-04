@@ -1,6 +1,6 @@
-package gq.nkkx.bedrockmechanics.controller.input.handlers;
+package gq.nkkx.bedrockmechanics.client.controller.input.handlers;
 
-import gq.nkkx.bedrockmechanics.controller.input.ControllerButtonBinding.AccessibleEnvironment;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerButtonBinding.AccessibleEnvironment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 

@@ -1,6 +1,6 @@
 package gq.nkkx.bedrockmechanics.options;
 
-import gq.nkkx.bedrockmechanics.controller.Controller;
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
 import lombok.Getter;
 import lombok.Setter;
 import me.shedaniel.autoconfig.ConfigData;

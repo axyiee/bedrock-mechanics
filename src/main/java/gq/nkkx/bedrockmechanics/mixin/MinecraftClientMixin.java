@@ -1,8 +1,8 @@
-package gq.nkkx.bedrockmechanics.client.mixin;
+package gq.nkkx.bedrockmechanics.mixin;
 
-import gq.nkkx.bedrockmechanics.controller.input.ControllerInputManager;
-import gq.nkkx.bedrockmechanics.controller.tasks.ControllerUpdateThread;
-import gq.nkkx.bedrockmechanics.controller.tasks.ControllersMappingsSetup;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerInputManager;
+import gq.nkkx.bedrockmechanics.client.controller.tasks.ControllerUpdateThread;
+import gq.nkkx.bedrockmechanics.client.controller.tasks.ControllersMappingsSetup;
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,9 +1,9 @@
-package gq.nkkx.bedrockmechanics.controller.input.handlers;
+package gq.nkkx.bedrockmechanics.client.controller.input.handlers;
 
 import gq.nkkx.bedrockmechanics.client.accessor.IKeyBinding;
-import gq.nkkx.bedrockmechanics.controller.input.ControllerAxisState;
-import gq.nkkx.bedrockmechanics.controller.input.ControllerButtonState;
-import gq.nkkx.bedrockmechanics.controller.input.ControllerInputManager;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerAxisState;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerButtonState;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerInputManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.StickyKeyBinding;
 

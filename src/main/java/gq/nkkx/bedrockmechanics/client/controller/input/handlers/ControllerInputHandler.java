@@ -1,10 +1,10 @@
-package gq.nkkx.bedrockmechanics.controller.input.handlers;
+package gq.nkkx.bedrockmechanics.client.controller.input.handlers;
 
 import gq.nkkx.bedrockmechanics.BedrockMechanics;
-import gq.nkkx.bedrockmechanics.controller.Controller;
-import gq.nkkx.bedrockmechanics.controller.input.ControllerAxisState;
-import gq.nkkx.bedrockmechanics.controller.input.ControllerButtonState;
-import gq.nkkx.bedrockmechanics.controller.input.ControllerInputManager;
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerAxisState;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerButtonState;
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerInputManager;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import org.lwjgl.glfw.GLFWGamepadState;
@@ -12,7 +12,7 @@ import org.lwjgl.glfw.GLFWGamepadState;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 
-import static gq.nkkx.bedrockmechanics.controller.input.ControllerAxisState.toButton;
+import static gq.nkkx.bedrockmechanics.client.controller.input.ControllerAxisState.toButton;
 
 public class ControllerInputHandler {
 

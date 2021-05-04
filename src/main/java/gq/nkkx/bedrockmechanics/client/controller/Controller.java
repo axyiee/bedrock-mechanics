@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.controller;
+package gq.nkkx.bedrockmechanics.client.controller;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWGamepadState;

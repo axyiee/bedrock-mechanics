@@ -1,8 +1,8 @@
 package gq.nkkx.bedrockmechanics.client;
 
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
+import gq.nkkx.bedrockmechanics.client.controller.input.handlers.ControllerInputHandler;
 import gq.nkkx.bedrockmechanics.client.gui.provider.ControllerGuiProvider;
-import gq.nkkx.bedrockmechanics.controller.Controller;
-import gq.nkkx.bedrockmechanics.controller.input.handlers.ControllerInputHandler;
 import gq.nkkx.bedrockmechanics.options.BedrockMechanicsOptions;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
