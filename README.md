@@ -19,14 +19,16 @@ List of planned resources. Those that have already been added are marked with a 
   * [x] Can add any binding easily through the API
   * [x] Basic stuff, such as axis and button handling. This includes some essential bindings (walk, look, drop item,
     etc.)
+  * [ ] Configurable controller bindings
   * [ ] Inventory interaction support
   * [ ] Other menus interaction support
 * [x] Paper doll
 * [x] Show location and FPS under paper doll
 * [ ] Bedrock water color tint
-* [ ] Bedrock Edition exclusive animations
+* [x] Bedrock Edition exclusive animations
+  * [ ] Idle hand animation
   * [ ] Drowned swimming animation
-  * [ ] Eating animation
+  * [x] Eating animation
   * [ ] Burning animation
   * [ ] Suffocation animation
   * [ ] Nether portal entering animation

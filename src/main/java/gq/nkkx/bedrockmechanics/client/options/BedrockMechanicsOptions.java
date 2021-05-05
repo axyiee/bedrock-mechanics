@@ -27,6 +27,10 @@ public class BedrockMechanicsOptions implements ConfigData {
     @ConfigEntry.Gui.TransitiveObject
     private final HudOptions hudOptions = new HudOptions();
 
+    @ConfigEntry.Category("animations-options")
+    @ConfigEntry.Gui.TransitiveObject
+    private final AnimationsOptions animationsOptions = new AnimationsOptions();
+
     public static void init() {
         AutoConfig.register(BedrockMechanicsOptions.class, GsonConfigSerializer::new);
         AutoConfig.getGuiRegistry(BedrockMechanicsOptions.class).registerTypeProvider(new ControllerGuiProvider(), Controller.class);

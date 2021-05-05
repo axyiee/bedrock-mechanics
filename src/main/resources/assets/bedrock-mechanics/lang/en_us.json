@@ -27,5 +27,7 @@
   "text.autoconfig.bedrock-mechanics.option.hudOptions.showPosition": "Show Position",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.screenSafeArea": "Screen Safe Area",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.textColor": "Text Color",
+  "text.autoconfig.bedrock-mechanics.category.animations-options": "Animations",
+  "text.autoconfig.bedrock-mechanics.option.animationsOptions.enableEatingAnimation": "Enable eating animation",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.showFPS": "Show FPS"
 }
