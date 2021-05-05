@@ -39,4 +39,6 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Accurate effect timer (don't show it as infinite)
   * [ ] Accurate block placement (in order to better implement the front block placing)
   * [ ] Front block placing
-  * [ ]
+  * [ ] Colorful cauldron water
+  * [ ] Fill cauldrons with lava
+  * [ ] Cauldrons filled with water can extinguish fire in players
