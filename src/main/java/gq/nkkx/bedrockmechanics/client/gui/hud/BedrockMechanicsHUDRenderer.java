@@ -3,7 +3,7 @@ package gq.nkkx.bedrockmechanics.client.gui.hud;
 import gq.nkkx.bedrockmechanics.client.accessor.IMinecraftClient;
 import gq.nkkx.bedrockmechanics.client.gui.IRenderer;
 import gq.nkkx.bedrockmechanics.client.gui.paperdoll.PaperDoll;
-import gq.nkkx.bedrockmechanics.options.GuiOptions;
+import gq.nkkx.bedrockmechanics.client.options.GuiOptions;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
@@ -35,14 +35,14 @@ public class BedrockMechanicsHUDRenderer implements IRenderer {
                 BlockPos blockPos = client.player.getBlockPos();
                 String position = String.format("%d, %d, %d", blockPos.getX(), blockPos.getY(), blockPos.getZ());
                 Text text = POSITION_TEXT.append(position);
-                client.textRenderer.drawWithShadow(matrices, text, posX, basePosY, options.getTextColor());
+                client.textRenderer.drawWithShadow(matrices, text, posX, basePosY, 0xffffff);
             }
 
             if (BedrockMechanicsHUD.shouldShowFPS()) {
                 int fps = ((IMinecraftClient) client).getCurrentFPS();
                 int posY = shouldShowPosition ? basePosY : basePosY + 10;
                 Text text = FPS_TEXT.append(String.valueOf(fps));
-                client.textRenderer.drawWithShadow(matrices, text, posX, posY, options.getTextColor());
+                client.textRenderer.drawWithShadow(matrices, text, posX, posY, 0xffffff);
             }
         }
     }

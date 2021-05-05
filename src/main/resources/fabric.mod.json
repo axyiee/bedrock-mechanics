@@ -3,7 +3,7 @@
   "id": "bedrock-mechanics",
   "version": "${version}",
   "name": "Bedrock Mechanics",
-  "description": "A client-side mod for Fabric that ports Bedrock Edition mechanics to Java Edition.",
+  "description": "A mod for Fabric that ports Bedrock Edition mechanics to Java Edition.",
   "authors": [
     "nekkan"
   ],
@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "icon": "assets/bedrock-mechanics/icon.png",
-  "environment": "client",
+  "environment": "*",
   "entrypoints": {
     "client": [
       "gq.nkkx.bedrockmechanics.client.BedrockMechanicsClient"

@@ -1,7 +1,7 @@
 package gq.nkkx.bedrockmechanics.client.gui.paperdoll;
 
 import gq.nkkx.bedrockmechanics.client.gui.IRenderer;
-import gq.nkkx.bedrockmechanics.options.GuiOptions;
+import gq.nkkx.bedrockmechanics.client.options.GuiOptions;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.client.network.ClientPlayerEntity;

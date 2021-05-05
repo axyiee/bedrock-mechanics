@@ -1,6 +1,6 @@
 package gq.nkkx.bedrockmechanics.client.gui.paperdoll;
 
-import gq.nkkx.bedrockmechanics.options.GuiOptions;
+import gq.nkkx.bedrockmechanics.client.options.GuiOptions;
 
 import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
 

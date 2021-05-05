@@ -29,7 +29,7 @@ public class ControllerInputHandler {
 
     private void onTick(MinecraftClient minecraftClient) {
         Controller controller = BedrockMechanics.options().getControllerOptions().getSelectedController();
-        if (BedrockMechanics.options().getControllerOptions().isEnabled() && controller != null && controller.isConnected()) {
+        if (controller != null && BedrockMechanics.options().getControllerOptions().isEnabled() && controller.isConnected()) {
             GLFWGamepadState state = controller.getGamepadState();
             fetchGamepadButtonsInput(state);
             fetchGamepadAxesInput(state);

@@ -20,7 +20,7 @@ public class ControllersSetup implements Runnable {
                 if (registry.register(controller)) {
                     BedrockMechanics.getLogger().info("Registered controller with ID " + id);
                     if (BedrockMechanics.options().getControllerOptions().getSelectedController() == null) {
-                        BedrockMechanics.options().getControllerOptions().setSelectedController(controller);
+                        BedrockMechanics.options().getControllerOptions().setSelectedControllerId(controller.getId());
                         BedrockMechanics.getLogger().info("Set selected controller to controller with ID " + id);
                     }
                 }
