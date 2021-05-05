@@ -1,14 +1,15 @@
 package gq.nkkx.bedrockmechanics.client.controller.input;
 
+import gq.nkkx.bedrockmechanics.client.accessor.IKeyBinding;
 import gq.nkkx.bedrockmechanics.client.keybindings.LookKeyBindingView;
 import lombok.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.GameOptions;
 import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.options.StickyKeyBinding;
 
 import java.util.Objects;
-import java.util.Optional;
-import java.util.function.Function;
+import java.util.function.BiConsumer;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -25,7 +26,7 @@ public class ControllerButtonBinding {
         .identifier("drop_item")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_B)
-        .supply(options -> options.keyDrop)
+        .execute((options, pressed) -> useKeybind(options.keyDrop, pressed))
         .build()
         .add();
 
@@ -33,7 +34,7 @@ public class ControllerButtonBinding {
         .identifier("jump")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_A)
-        .supply(options -> options.keyJump)
+        .execute((options, pressed) -> useKeybind(options.keyJump, pressed))
         .build()
         .add();
 
@@ -41,7 +42,7 @@ public class ControllerButtonBinding {
         .identifier("attack")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER)
-        .supply(options -> options.keyAttack)
+        .execute((options, pressed) -> useKeybind(options.keyAttack, pressed))
         .isAxis(true)
         .isAxisPositive(true)
         .build()
@@ -51,7 +52,7 @@ public class ControllerButtonBinding {
         .identifier("use")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_LEFT_TRIGGER)
-        .supply(options -> options.keyUse)
+        .execute((options, pressed) -> useKeybind(options.keyUse, pressed))
         .isAxis(true)
         .isAxisPositive(true)
         .build()
@@ -63,37 +64,34 @@ public class ControllerButtonBinding {
         .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
         .isAxis(true)
         .isAxisPositive(false)
-        .supply(options -> options.keyForward)
+        .execute((options, pressed) -> useKeybind(options.keyForward, pressed))
         .build()
         .add();
-
-    private static final ControllerButtonBinding MOVE_BACKWARDS = builder()
-        .identifier("move_backwards")
-        .category(MOVEMENT_CATEGORY)
-        .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
-        .isAxis(true)
-        .isAxisPositive(true)
-        .supply(options -> options.keyBack)
-        .build()
-        .add();
-
-    private static final ControllerButtonBinding MOVE_RIGHT = builder()
-        .identifier("right")
-        .category(MOVEMENT_CATEGORY)
-        .button(GLFW_GAMEPAD_AXIS_LEFT_X)
-        .isAxis(true)
-        .isAxisPositive(true)
-        .supply(options -> options.keyRight)
-        .build()
-        .add();
-
     public static final ControllerButtonBinding LOOK_UP = builder()
         .identifier("look_up")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_RIGHT_Y)
         .isAxis(true)
         .isAxisPositive(false)
-        .supply(options -> LookKeyBindingView.LOOK_UP.getKeyBinding())
+        .execute((options, pressed) -> useKeybind(LookKeyBindingView.LOOK_UP.getKeyBinding(), pressed))
+        .build()
+        .add();
+    private static final ControllerButtonBinding MOVE_BACKWARDS = builder()
+        .identifier("move_backwards")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .execute((options, pressed) -> useKeybind(options.keyBack, pressed))
+        .build()
+        .add();
+    private static final ControllerButtonBinding MOVE_RIGHT = builder()
+        .identifier("right")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_AXIS_LEFT_X)
+        .isAxis(true)
+        .isAxisPositive(true)
+        .execute((options, pressed) -> useKeybind(options.keyRight, pressed))
         .build()
         .add();
     private static final ControllerButtonBinding MOVE_LEFT = builder()
@@ -102,7 +100,7 @@ public class ControllerButtonBinding {
         .button(GLFW_GAMEPAD_AXIS_LEFT_X)
         .isAxis(true)
         .isAxisPositive(false)
-        .supply(options -> options.keyLeft)
+        .execute((options, pressed) -> useKeybind(options.keyLeft, pressed))
         .build()
         .add();
     private static final ControllerButtonBinding LOOK_DOWN = builder()
@@ -111,7 +109,7 @@ public class ControllerButtonBinding {
         .button(GLFW_GAMEPAD_AXIS_RIGHT_Y)
         .isAxis(true)
         .isAxisPositive(true)
-        .supply(options -> LookKeyBindingView.LOOK_DOWN.getKeyBinding())
+        .execute((options, pressed) -> useKeybind(LookKeyBindingView.LOOK_DOWN.getKeyBinding(), pressed))
         .build()
         .add();
 
@@ -121,7 +119,7 @@ public class ControllerButtonBinding {
         .button(GLFW_GAMEPAD_AXIS_RIGHT_X)
         .isAxis(true)
         .isAxisPositive(true)
-        .supply(options -> LookKeyBindingView.LOOK_RIGHT.getKeyBinding())
+        .execute((options, pressed) -> useKeybind(LookKeyBindingView.LOOK_RIGHT.getKeyBinding(), pressed))
         .build()
         .add();
 
@@ -131,7 +129,7 @@ public class ControllerButtonBinding {
         .button(GLFW_GAMEPAD_AXIS_RIGHT_X)
         .isAxis(true)
         .isAxisPositive(false)
-        .supply(options -> LookKeyBindingView.LOOK_LEFT.getKeyBinding())
+        .execute((options, pressed) -> useKeybind(LookKeyBindingView.LOOK_LEFT.getKeyBinding(), pressed))
         .build()
         .add();
 
@@ -139,7 +137,39 @@ public class ControllerButtonBinding {
         .identifier("open_inventory")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_Y)
-        .supply(options -> options.keyInventory)
+        .execute((options, pressed) -> useKeybind(options.keyInventory, pressed))
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding PAUSE_GAME = builder()
+        .identifier("pause_game")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_START)
+        .execute((options, pressed) -> MinecraftClient.getInstance().openPauseMenu(pressed))
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding SNEAK = builder()
+        .identifier("sneak")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_RIGHT_THUMB)
+        .execute((options, pressed) -> useKeybind(options.keySneak, pressed))
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding SPRINT = builder()
+        .identifier("sprint")
+        .category(MOVEMENT_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_LEFT_THUMB)
+        .execute((options, pressed) -> useKeybind(options.keySprint, pressed))
+        .build()
+        .add();
+
+    private static final ControllerButtonBinding TOGGLE_PERSPECTIVE = builder()
+        .identifier("toggle_perspective")
+        .category(GAMEPLAY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_X)
+        .execute((options, pressed) -> useKeybind(options.keyTogglePerspective, pressed))
         .build()
         .add();
 
@@ -152,12 +182,22 @@ public class ControllerButtonBinding {
     @Builder.Default
     private final AccessibleEnvironment environment = AccessibleEnvironment.IN_GAME;
     @Getter(AccessLevel.NONE)
-    private final Function<GameOptions, KeyBinding> supply;
+
+    private final BiConsumer<GameOptions, Boolean> execute;
+
     @Setter
     private int button;
 
-    public Optional<KeyBinding> asKeyBinding() {
-        return Optional.ofNullable(supply.apply(MinecraftClient.getInstance().options));
+    private static void useKeybind(KeyBinding keyBinding, boolean pressed) {
+        if (keyBinding instanceof StickyKeyBinding) {
+            keyBinding.setPressed(pressed);
+        } else {
+            ((IKeyBinding) keyBinding).changeNonStickyPressState(pressed);
+        }
+    }
+
+    public void execute(boolean pressed) {
+        execute.accept(MinecraftClient.getInstance().options, pressed);
     }
 
     @Override

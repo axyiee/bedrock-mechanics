@@ -37,8 +37,13 @@ List of planned resources. Those that have already been added are marked with a 
 * [x] Bedrock mechanics
   * [x] Sneaking activates shield
   * [ ] Accurate effect timer (don't show it as infinite)
-  * [ ] Accurate block placement (in order to better implement the front block placing)
+  * ~~❌ Accurate block placement (in order to better implement the front block
+    placing)~~ ([Use this instead][accurate-block-placement])
   * [ ] Front block placing
   * [ ] Colorful cauldron water
   * [ ] Fill cauldrons with lava
   * [ ] Cauldrons filled with water can extinguish fire in players
+  * [ ] Highlight slots when hovering
+  * [ ] Show enchantments and background when held item tooltip is displayed
+
+[accurate-block-placement]: https://www.curseforge.com/minecraft/mc-mods/accurate-block-placement  
