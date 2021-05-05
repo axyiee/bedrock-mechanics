@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.MinecraftClientMixin",
+    "client.gui.hud.BossBarHudMixin",
     "client.gui.hud.InGameHudMixin",
+    "client.gui.screen.TitleScreenMixin",
     "client.options.KeyBindingMixin",
     "client.render.CameraMixin",
     "client.render.entity.model.PlayerEntityModelMixin",

@@ -48,7 +48,12 @@ List of planned resources. Those that have already been added are marked with a 
   * ❌ ~~Cauldrons filled with water can extinguish fire in players~~ ([#1][first-issue])
   * [ ] Highlight slots when hovering
   * [ ] Show enchantments and background when held item tooltip is displayed
-  * [ ] Bedrock-style title screen
+  * [X] Bedrock-style screens
+    * [X] Title screen
+    * [ ] Loading world screen
+* [x] Utility and/or non-bedrock related
+  * [x] Screen safe area
+  * [x] Key binding for look around
 
 [accurate-block-placement]: https://www.curseforge.com/minecraft/mc-mods/accurate-block-placement
 

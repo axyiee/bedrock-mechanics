@@ -34,7 +34,7 @@ public class PaperDollRenderer implements IRenderer {
 
             HudOptions options = options().getHudOptions();
 
-            int basePosY = options.getPositionY() + options.getScreenSafeArea() + PADDING_Y, paperDollScale = options.getPaperDollScale();
+            int basePosY = options.getPositionY() + PADDING_Y, paperDollScale = options.getPaperDollScale();
             int posX = options.getPositionX() + options.getScreenSafeArea() + PADDING_X;
 
             int posY = (player.isFallFlying()

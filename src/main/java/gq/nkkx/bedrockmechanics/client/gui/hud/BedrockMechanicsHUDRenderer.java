@@ -25,6 +25,7 @@ public class BedrockMechanicsHUDRenderer implements IRenderer {
             HudOptions options = options().getHudOptions();
 
             int basePosY = options.getPositionY() + options.getScreenSafeArea() + (PaperDoll.isEnabled() ? 50 : 0);
+
             int posX = options.getPositionX() + options.getScreenSafeArea();
 
             boolean shouldShowPosition = BedrockMechanicsHUD.shouldShowPosition();
