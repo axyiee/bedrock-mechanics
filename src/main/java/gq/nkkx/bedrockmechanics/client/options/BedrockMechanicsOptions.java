@@ -1,5 +1,7 @@
 package gq.nkkx.bedrockmechanics.client.options;
 
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
+import gq.nkkx.bedrockmechanics.client.gui.provider.ControllerGuiProvider;
 import lombok.Data;
 import lombok.Getter;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -27,6 +29,7 @@ public class BedrockMechanicsOptions implements ConfigData {
 
     public static void init() {
         AutoConfig.register(BedrockMechanicsOptions.class, GsonConfigSerializer::new);
+        AutoConfig.getGuiRegistry(BedrockMechanicsOptions.class).registerTypeProvider(new ControllerGuiProvider(), Controller.class);
     }
 
 }
