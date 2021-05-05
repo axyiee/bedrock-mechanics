@@ -16,6 +16,6 @@ allow_fast_block_placement = true
 key_binding_look_speed = 50.0
 
 [controller]
-is_enabled = false
-selected_controller = 0
+is_enabled = true
+selected_controller = -1
 dead_zone = 0.25

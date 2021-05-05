@@ -1,0 +1,3 @@
+[submodule "src/main/resources/bedrock-unicode-characters"]
+	path = src/main/resources/bedrock-unicode-characters
+	url = https://github.com/TwistedAsylumMC/bedrock-unicode-characters.git

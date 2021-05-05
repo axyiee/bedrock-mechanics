@@ -1,6 +1,7 @@
 package gq.nkkx.bedrockmechanics.client.options;
 
 import com.google.gson.annotations.SerializedName;
+import gq.nkkx.bedrockmechanics.BedrockMechanics;
 import gq.nkkx.bedrockmechanics.client.controller.Controller;
 import gq.nkkx.bedrockmechanics.registry.ControllerRegistry;
 import lombok.Data;
@@ -22,11 +23,15 @@ public class ControllerOptions {
     private float deadZone;
 
     public Controller getSelectedController() {
-        try {
-            return ControllerRegistry.getInstance().withId(selectedControllerId).orElse(null);
-        } catch (Exception ignored) {
+        if (selectedControllerId == -1) {
             return null;
         }
+        return ControllerRegistry.getInstance().withId(selectedControllerId).orElse(null);
+    }
+
+    public void setSelectedController(Controller controller) {
+        BedrockMechanics.getLogger().info("Setting current controller to " + controller.getId());
+        setSelectedControllerId(controller.getId());
     }
 
 }
