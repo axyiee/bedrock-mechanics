@@ -45,7 +45,7 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Front block placing
   * [ ] Colorful cauldron water
   * [ ] Fill cauldrons with lava
-  * [ ] Cauldrons filled with water can extinguish fire in players
+  * ❌ ~~Cauldrons filled with water can extinguish fire in players~~ (#1)
   * [ ] Highlight slots when hovering
   * [ ] Show enchantments and background when held item tooltip is displayed
 
