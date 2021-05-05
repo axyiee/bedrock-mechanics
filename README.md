@@ -19,6 +19,7 @@ List of planned resources. Those that have already been added are marked with a 
   * [x] Can add any binding easily through the API
   * [x] Basic stuff, such as axis and button handling. This includes some essential bindings (walk, look, drop item,
     etc.)
+  * [ ] Controller HUD
   * [ ] Configurable controller bindings
   * [ ] Inventory interaction support
   * [ ] Other menus interaction support
@@ -26,7 +27,7 @@ List of planned resources. Those that have already been added are marked with a 
 * [x] Show location and FPS under paper doll
 * [ ] Bedrock water color tint
 * [x] Bedrock Edition exclusive animations
-  * [ ] Idle hand animation
+  * [x] Idle hand animation
   * [ ] Drowned swimming animation
   * [x] Eating animation
   * [ ] Burning animation

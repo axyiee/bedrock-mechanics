@@ -14,4 +14,6 @@ public class AnimationsOptions implements ConfigData {
 
     private boolean enableEatingAnimation = true;
 
+    private boolean enableIdleHandAnimation = true;
+
 }

@@ -8,7 +8,8 @@
     "client.gui.hud.InGameHudMixin",
     "client.options.KeyBindingMixin",
     "client.render.CameraMixin",
-    "client.render.entity.model.PlayerEntityModelMixin"
+    "client.render.entity.model.PlayerEntityModelMixin",
+    "client.render.item.HeldItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
