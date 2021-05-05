@@ -45,8 +45,10 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Front block placing
   * [ ] Colorful cauldron water
   * [ ] Fill cauldrons with lava
-  * ❌ ~~Cauldrons filled with water can extinguish fire in players~~ (#1)
+  * ❌ ~~Cauldrons filled with water can extinguish fire in players~~ ([#1][first-issue])
   * [ ] Highlight slots when hovering
   * [ ] Show enchantments and background when held item tooltip is displayed
 
-[accurate-block-placement]: https://www.curseforge.com/minecraft/mc-mods/accurate-block-placement  
+[accurate-block-placement]: https://www.curseforge.com/minecraft/mc-mods/accurate-block-placement
+
+[first-issue]: https://github.com/nekkan/bedrock-mechanics/issues/1
