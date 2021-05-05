@@ -18,7 +18,7 @@
       "gq.nkkx.bedrockmechanics.client.BedrockMechanicsClient"
     ],
     "modmenu": [
-      "gq.nkkx.bedrockmechanics.client.integration.ModMenuIntegration"
+      "gq.nkkx.bedrockmechanics.client.gui.screen.ModMenuIntegration"
     ]
   },
   "mixins": [

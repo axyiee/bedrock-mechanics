@@ -13,15 +13,15 @@ public class BedrockMechanicsHUD {
     }
 
     public static boolean isEnabled() {
-        return options().getGuiOptions().isEnabled();
+        return options().getHudOptions().isEnabled();
     }
 
     public static boolean shouldShowFPS() {
-        return isEnabled() && options().getGuiOptions().isShowFPS();
+        return isEnabled() && options().getHudOptions().isShowFPS();
     }
 
     public static boolean shouldShowPosition() {
-        return isEnabled() && options().getGuiOptions().isShowPosition();
+        return isEnabled() && options().getHudOptions().isShowPosition();
     }
 
 }

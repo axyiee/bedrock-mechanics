@@ -1,19 +1,21 @@
 package gq.nkkx.bedrockmechanics.client.options;
 
-import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Data
 @Getter
 @Setter
-public class MechanicsOptions {
+@Config(name = "mechanics-options")
+public class MechanicsOptions implements ConfigData {
 
-    @SerializedName("allow_fast_block_placement")
-    private boolean allowFastBlockPlacement;
+    private boolean allowFastBlockPlacement = true;
 
-    @SerializedName("key_binding_look_speed")
-    private float keyBindingLookSpeed;
+    @ConfigEntry.BoundedDiscrete(min = 50, max = 1000)
+    private int keyBindingLookSpeed = 500;
 
 }

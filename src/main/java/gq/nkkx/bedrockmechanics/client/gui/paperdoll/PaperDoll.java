@@ -1,6 +1,6 @@
 package gq.nkkx.bedrockmechanics.client.gui.paperdoll;
 
-import gq.nkkx.bedrockmechanics.client.options.GuiOptions;
+import gq.nkkx.bedrockmechanics.client.options.HudOptions;
 
 import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
 
@@ -15,7 +15,7 @@ public class PaperDoll {
     }
 
     public static boolean isEnabled() {
-        GuiOptions options = options().getGuiOptions();
+        HudOptions options = options().getHudOptions();
         return options.isEnabled() && options.isPaperDollEnabled();
     }
 

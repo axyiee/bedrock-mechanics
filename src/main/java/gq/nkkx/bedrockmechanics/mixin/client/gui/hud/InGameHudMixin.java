@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
 
-    @Inject(method = "render", at = @At("RETURN"))
+    @Inject(method = "render", at = @At(value = "RETURN"))
     private void bedrock_mechanics$render(MatrixStack matrices, float tickDelta, CallbackInfo callbackInfo) {
         GuiRenderer.render(matrices, tickDelta);
     }

@@ -1,37 +1,22 @@
 package gq.nkkx.bedrockmechanics.client.options;
 
-import com.google.gson.annotations.SerializedName;
-import gq.nkkx.bedrockmechanics.BedrockMechanics;
 import gq.nkkx.bedrockmechanics.client.controller.Controller;
-import gq.nkkx.bedrockmechanics.registry.ControllerRegistry;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
 
 @Data
 @Getter
 @Setter
-public class ControllerOptions {
+@Config(name = "controller-options")
+public class ControllerOptions implements ConfigData {
 
-    @SerializedName("selected_controller")
-    private int selectedControllerId;
+    private Controller selectedController = null;
 
-    @SerializedName("is_enabled")
-    private boolean isEnabled;
+    private boolean isEnabled = true;
 
-    @SerializedName("dead_zone")
-    private float deadZone;
-
-    public Controller getSelectedController() {
-        if (selectedControllerId == -1) {
-            return null;
-        }
-        return ControllerRegistry.getInstance().withId(selectedControllerId).orElse(null);
-    }
-
-    public void setSelectedController(Controller controller) {
-        BedrockMechanics.getLogger().info("Setting current controller to " + controller.getId());
-        setSelectedControllerId(controller.getId());
-    }
+    private float deadZone = 0.25f;
 
 }
