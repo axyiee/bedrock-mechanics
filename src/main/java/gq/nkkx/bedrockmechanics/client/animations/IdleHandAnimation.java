@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.client.mechanics.animations;
+package gq.nkkx.bedrockmechanics.client.animations;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
@@ -13,7 +13,7 @@ public class IdleHandAnimation implements IAnimation {
 
     @Override
     public void playStack(MatrixStack matrices, Arm arm, float equipProgress, CallbackInfo callbackInfo) {
-        if (!options().getAnimationsOptions().isEnableIdleHandAnimation()) {
+        if (!options().getVisualsOptions().isEnableIdleHandAnimation()) {
             return;
         }
         int side = arm == Arm.RIGHT ? 1 : -1;

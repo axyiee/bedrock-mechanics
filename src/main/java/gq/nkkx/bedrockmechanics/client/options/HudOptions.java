@@ -21,6 +21,8 @@ public class HudOptions implements ConfigData {
 
     private boolean showFPS = true;
 
+    private boolean bedrockChatStyle = true;
+
     @ConfigEntry.BoundedDiscrete(min = 0, max = 360)
     private int paperDollRotation = 20;
 

@@ -1,7 +1,7 @@
 package gq.nkkx.bedrockmechanics.mixin.client.render.item;
 
-import gq.nkkx.bedrockmechanics.client.mechanics.animations.IAnimation;
-import gq.nkkx.bedrockmechanics.client.mechanics.animations.IdleHandAnimation;
+import gq.nkkx.bedrockmechanics.client.animations.IAnimation;
+import gq.nkkx.bedrockmechanics.client.animations.IdleHandAnimation;
 import net.minecraft.client.render.item.HeldItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Arm;

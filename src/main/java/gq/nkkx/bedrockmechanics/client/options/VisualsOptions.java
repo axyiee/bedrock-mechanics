@@ -9,8 +9,8 @@ import me.shedaniel.autoconfig.annotation.Config;
 @Data
 @Setter
 @Getter
-@Config(name = "animations-options")
-public class AnimationsOptions implements ConfigData {
+@Config(name = "visuals-options")
+public class VisualsOptions implements ConfigData {
 
     private boolean enableEatingAnimation = true;
 

@@ -1,7 +1,7 @@
 package gq.nkkx.bedrockmechanics.mixin.client.render.entity.model;
 
-import gq.nkkx.bedrockmechanics.client.mechanics.animations.EatingAnimation;
-import gq.nkkx.bedrockmechanics.client.mechanics.animations.IAnimation;
+import gq.nkkx.bedrockmechanics.client.animations.EatingAnimation;
+import gq.nkkx.bedrockmechanics.client.animations.IAnimation;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;

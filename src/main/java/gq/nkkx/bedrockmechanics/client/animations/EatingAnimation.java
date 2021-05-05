@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.client.mechanics.animations;
+package gq.nkkx.bedrockmechanics.client.animations;
 
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.entity.LivingEntity;
@@ -24,7 +24,7 @@ public class EatingAnimation implements IAnimation {
 
     @Override
     public void play(LivingEntity entity, float tickDelta, PlayerEntityModel model) {
-        if (!(entity instanceof PlayerEntity) || !options().getAnimationsOptions().isEnableEatingAnimation()) {
+        if (!(entity instanceof PlayerEntity) || !options().getVisualsOptions().isEnableEatingAnimation()) {
             return;
         }
         PlayerEntity player = (PlayerEntity) entity;

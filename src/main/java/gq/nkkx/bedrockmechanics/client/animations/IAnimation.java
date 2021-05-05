@@ -1,4 +1,4 @@
-package gq.nkkx.bedrockmechanics.client.mechanics.animations;
+package gq.nkkx.bedrockmechanics.client.animations;
 
 import gq.nkkx.bedrockmechanics.client.mechanics.IMechanic;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;

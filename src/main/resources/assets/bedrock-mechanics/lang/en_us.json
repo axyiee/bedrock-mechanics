@@ -28,7 +28,8 @@
   "text.autoconfig.bedrock-mechanics.option.hudOptions.screenSafeArea": "Screen Safe Area",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.textColor": "Text Color",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.showFPS": "Show FPS",
-  "text.autoconfig.bedrock-mechanics.category.animations-options": "Animations",
-  "text.autoconfig.bedrock-mechanics.option.animationsOptions.enableEatingAnimation": "Enable eating animation",
-  "text.autoconfig.bedrock-mechanics.option.animationsOptions.enableIdleHandAnimation": "Enable idle hand animation"
+  "text.autoconfig.bedrock-mechanics.option.hudOptions.bedrockChatStyle": "Bedrock-style chat",
+  "text.autoconfig.bedrock-mechanics.category.visuals-options": "Visuals",
+  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableEatingAnimation": "Enable eating animation",
+  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableIdleHandAnimation": "Enable idle hand animation"
 }

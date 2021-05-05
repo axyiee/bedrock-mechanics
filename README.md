@@ -26,7 +26,7 @@ List of planned resources. Those that have already been added are marked with a 
 * [x] Paper doll
 * [x] Show location and FPS under paper doll
 * [ ] Bedrock water color tint
-* [x] Bedrock Edition exclusive animations
+* [x] Bedrock Edition exclusive animations and visuals
   * [x] Idle hand animation
   * [ ] Drowned swimming animation
   * [x] Eating animation
@@ -37,6 +37,8 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Fade-in chunk loading
     * [ ] Support for Sodium
     * [ ] Support for OptiFabric
+  * [x] Bedrock style chat
+  * [ ] Xbox-style achievements unlocking
 * [x] Bedrock mechanics
   * [x] Sneaking activates shield
   * [ ] Accurate effect timer (don't show it as infinite)
@@ -48,8 +50,8 @@ List of planned resources. Those that have already been added are marked with a 
   * ❌ ~~Cauldrons filled with water can extinguish fire in players~~ ([#1][first-issue])
   * [ ] Highlight slots when hovering
   * [ ] Show enchantments and background when held item tooltip is displayed
-  * [X] Bedrock-style screens
-    * [X] Title screen
+  * [ ] Bedrock-style screens
+    * [ ] Title screen
     * [ ] Loading world screen
 * [x] Utility and/or non-bedrock related
   * [x] Screen safe area

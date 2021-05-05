@@ -6,6 +6,7 @@
   "client": [
     "client.MinecraftClientMixin",
     "client.gui.hud.BossBarHudMixin",
+    "client.gui.hud.ChatHudMixin",
     "client.gui.hud.InGameHudMixin",
     "client.gui.screen.TitleScreenMixin",
     "client.options.KeyBindingMixin",
