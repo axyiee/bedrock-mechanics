@@ -21,8 +21,8 @@ List of planned resources. Those that have already been added are marked with a 
     etc.)
   * [ ] Inventory interaction support
   * [ ] Other menus interaction support
-* [X] Paper doll
-* [X] Show location and FPS under paper doll
+* [x] Paper doll
+* [x] Show location and FPS under paper doll
 * [ ] Bedrock water color tint
 * [ ] Bedrock Edition exclusive animations
   * [ ] Drowned swimming animation
@@ -34,8 +34,8 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Fade-in chunk loading
     * [ ] Support for Sodium
     * [ ] Support for OptiFabric
-* [ ] Bedrock mechanics
-  * [ ] Sneaking activates shield
+* [x] Bedrock mechanics
+  * [x] Sneaking activates shield
   * [ ] Accurate effect timer (don't show it as infinite)
   * [ ] Accurate block placement (in order to better implement the front block placing)
   * [ ] Front block placing

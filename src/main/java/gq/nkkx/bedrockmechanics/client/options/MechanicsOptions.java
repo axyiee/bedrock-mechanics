@@ -15,7 +15,9 @@ public class MechanicsOptions implements ConfigData {
 
     private boolean allowFastBlockPlacement = true;
 
-    @ConfigEntry.BoundedDiscrete(min = 50, max = 1000)
-    private int keyBindingLookSpeed = 500;
+    private boolean sneakingActivatesShield = true;
+
+    @ConfigEntry.BoundedDiscrete(min = 10, max = 1500)
+    private int keyBindingLookSpeed = 1000;
 
 }

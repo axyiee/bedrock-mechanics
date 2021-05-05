@@ -16,6 +16,7 @@
   "text.autoconfig.bedrock-mechanics.category.mechanics-options": "Mechanics",
   "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.allowFastBlockPlacement": "Allow fast block placement",
   "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.keyBindingLookSpeed": "Key binding look speed",
+  "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.sneakingActivatesShield": "Sneaking activates shield",
   "text.autoconfig.bedrock-mechanics.category.hud-options": "HUD",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.isEnabled": "Is Enabled",
   "text.autoconfig.bedrock-mechanics.option.hudOptions.isPaperDollEnabled": "Enable paper doll",

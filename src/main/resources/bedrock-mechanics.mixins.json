@@ -6,7 +6,8 @@
   "client": [
     "client.MinecraftClientMixin",
     "client.gui.hud.InGameHudMixin",
-    "client.options.KeyBindingMixin"
+    "client.options.KeyBindingMixin",
+    "client.render.CameraMixin"
   ],
   "injectors": {
     "defaultRequire": 1
