@@ -38,4 +38,7 @@ public class HudOptions implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 0, max = 50)
     private int screenSafeArea = 0;
 
+    @ConfigEntry.ColorPicker
+    private int textColor = 0xffffff;
+
 }

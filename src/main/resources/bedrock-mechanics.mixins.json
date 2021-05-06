@@ -8,6 +8,7 @@
     "client.gui.hud.BossBarHudMixin",
     "client.gui.hud.ChatHudMixin",
     "client.gui.hud.InGameHudMixin",
+    "client.gui.hud.SubtitlesHudMixin",
     "client.gui.screen.TitleScreenMixin",
     "client.options.KeyBindingMixin",
     "client.render.CameraMixin",

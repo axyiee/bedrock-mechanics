@@ -11,6 +11,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.Vec3d;
 
 import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
+import static gq.nkkx.bedrockmechanics.client.gui.ScreenSafeArea.drawShadowedText;
 
 public class BedrockMechanicsHUDRenderer implements IRenderer {
 
@@ -23,25 +24,22 @@ public class BedrockMechanicsHUDRenderer implements IRenderer {
 
         if (client.player != null) {
             HudOptions options = options().getHudOptions();
-
-            int basePosY = options.getPositionY() + options.getScreenSafeArea() + (PaperDoll.isEnabled() ? 50 : 0);
-
-            int posX = options.getPositionX() + options.getScreenSafeArea();
-
             boolean shouldShowPosition = BedrockMechanicsHUD.shouldShowPosition();
             matrices.push();
             if (shouldShowPosition) {
+                int posY = options.getPositionY() + (PaperDoll.isEnabled() ? 50 : 0);
                 Vec3d pos = client.player.getPos();
                 String position = String.format("%.0f, %.0f, %.0f", pos.getX(), pos.getY(), pos.getZ());
                 Text text = new TranslatableText("bedrock-mechanics.hud.position").append(position);
-                client.textRenderer.drawWithShadow(matrices, text, posX, basePosY, 0xffffff);
+                drawShadowedText(matrices, text, options.getPositionX(), posY, options.getTextColor());
             }
 
             if (BedrockMechanicsHUD.shouldShowFPS()) {
                 int fps = ((IMinecraftClient) client).getCurrentFPS();
+                int basePosY = options.getPositionY() + (PaperDoll.isEnabled() ? 50 : 0);
                 int posY = shouldShowPosition ? basePosY + 10 : basePosY;
                 Text text = new TranslatableText("bedrock-mechanics.hud.fps").append(String.valueOf(fps));
-                client.textRenderer.drawWithShadow(matrices, text, posX, posY, 0xffffff);
+                drawShadowedText(matrices, text, options.getPositionX(), posY, options.getTextColor());
             }
             matrices.pop();
         }

@@ -39,6 +39,7 @@ List of planned resources. Those that have already been added are marked with a 
     * [ ] Support for OptiFabric
   * [x] Bedrock style chat
   * [ ] Xbox-style achievements unlocking
+  * [ ] Pickup animations
 * [x] Bedrock mechanics
   * [x] Sneaking activates shield
   * [ ] Accurate effect timer (don't show it as infinite)
