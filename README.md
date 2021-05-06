@@ -48,8 +48,7 @@ List of planned resources. Those that have already been added are marked with a 
 * [x] Bedrock mechanics
   * [x] Sneaking activates shield
   * [ ] Accurate effect timer (don't show it as infinite)
-  * ~~❌ Accurate block placement (in order to better implement the front block
-    placing)~~ ([Use this instead][accurate-block-placement])
+  * ~~❌ Accurate block placement (in order to better implement the front block placing)~~ ([Use this instead][accurate-block-placement])
   * [ ] Front block placing
   * [ ] Colorful cauldron water
   * [ ] Fill cauldrons with lava
@@ -58,6 +57,12 @@ List of planned resources. Those that have already been added are marked with a 
 * [x] Utility and/or non-bedrock related
   * [x] Screen safe area
   * [x] Key binding for look around
+
+## Credits
+
+Some parts of the code are taken from the [BedrockIfy][bedrockIfy] project.
+
+[bedrockIfy]: https://github.com/juancarloscp52/BedrockIfy
 
 [accurate-block-placement]: https://www.curseforge.com/minecraft/mc-mods/accurate-block-placement
 
