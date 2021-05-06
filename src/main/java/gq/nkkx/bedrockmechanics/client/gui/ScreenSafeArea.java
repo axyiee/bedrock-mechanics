@@ -11,13 +11,18 @@ import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
 
 public class ScreenSafeArea implements IRenderer.Empty {
 
-    public static void drawText(MatrixStack matrices, Text text, float x, float y, int color) {
-        MinecraftClient.getInstance().textRenderer.draw(
-            matrices, text, x + options().getHudOptions().getScreenSafeArea(), y + options().getHudOptions().getScreenSafeArea(), color
+    public static void fill(MatrixStack matrices, int x1, int y1, int x2, int y2, int color) {
+        DrawableHelper.fill(
+            matrices,
+            x1 + options().getHudOptions().getScreenSafeArea(),
+            y1 + options().getHudOptions().getScreenSafeArea(),
+            x2 + options().getHudOptions().getScreenSafeArea(),
+            y2 + options().getHudOptions().getScreenSafeArea(),
+            color
         );
     }
 
-    public static void minecraftFill(MatrixStack matrices, int x1, int y1, int x2, int y2, int color) {
+    public static void negativeFill(MatrixStack matrices, int x1, int y1, int x2, int y2, int color) {
         DrawableHelper.fill(
             matrices,
             x1 - options().getHudOptions().getScreenSafeArea(),

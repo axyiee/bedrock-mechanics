@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
-import static gq.nkkx.bedrockmechanics.client.gui.ScreenSafeArea.minecraftFill;
+import static gq.nkkx.bedrockmechanics.client.gui.ScreenSafeArea.negativeFill;
 
 @Mixin(SubtitlesHud.class)
 public class SubtitlesHudMixin {
@@ -28,7 +28,7 @@ public class SubtitlesHudMixin {
 
     @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/SubtitlesHud;fill(Lnet/minecraft/client/util/math/MatrixStack;IIIII)V"))
     private void bedrock_mechanics$render$fill(MatrixStack matrices, int x1, int y1, int x2, int y2, int color) {
-        minecraftFill(matrices, x1, y1, x2, y2, color);
+        negativeFill(matrices, x1, y1, x2, y2, color);
     }
 
 }
