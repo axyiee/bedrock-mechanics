@@ -3,7 +3,7 @@ package gq.nkkx.bedrockmechanics.client.gui.hud;
 import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
 
 /**
- * A utility class for getting the state and options for the paper doll feature.
+ * A utility class for getting the HUD state and its options.
  */
 public class BedrockMechanicsHUD {
 

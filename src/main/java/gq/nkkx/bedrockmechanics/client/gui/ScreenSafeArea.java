@@ -22,6 +22,21 @@ public class ScreenSafeArea implements IRenderer.Empty {
         );
     }
 
+    public static void drawShadowTextNegativePositive(TextRenderer textRenderer, MatrixStack matrices, Text text, float x, float y, int color) {
+        textRenderer.drawWithShadow(matrices, text, x - options().getHudOptions().getScreenSafeArea(), y + options().getHudOptions().getScreenSafeArea(), color);
+    }
+
+    public static void drawShadowTextPositiveX(TextRenderer textRenderer, MatrixStack matrices, Text text, float x, float y, int color) {
+        textRenderer.drawWithShadow(matrices, text, x + options().getHudOptions().getScreenSafeArea(), y, color);
+    }
+
+    public static void drawTexture(MatrixStack matrices, int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight) {
+        DrawableHelper.drawTexture(
+            matrices, x + options().getHudOptions().getScreenSafeArea(), y + options().getHudOptions().getScreenSafeArea(), u, v, width, height,
+            textureWidth, textureHeight
+        );
+    }
+
     public static void negativeFill(MatrixStack matrices, int x1, int y1, int x2, int y2, int color) {
         DrawableHelper.fill(
             matrices,
@@ -43,12 +58,24 @@ public class ScreenSafeArea implements IRenderer.Empty {
         return textRenderer.draw(matrices, text, x, y - options().getHudOptions().getScreenSafeArea(), color);
     }
 
+    public static void drawNegativeText(TextRenderer textRenderer, MatrixStack matrices, Text text, float x, float y, int color) {
+        textRenderer.draw(matrices, text, x, y - options().getHudOptions().getScreenSafeArea(), color);
+    }
+
     public static int drawNegativeShadowedText(TextRenderer textRenderer, MatrixStack matrices, Text text, float x, float y, int color) {
         return textRenderer.drawWithShadow(matrices, text, x, y - options().getHudOptions().getScreenSafeArea(), color);
     }
 
     public static void drawNegativeTexture(InGameHud inGameHud, MatrixStack matrices, int x, int y, int u, int v, int width, int height) {
         inGameHud.drawTexture(matrices, x, y - options().getHudOptions().getScreenSafeArea(), u, v, width, height);
+    }
+
+
+    public static void drawNegativeAndPositiveTexture(MatrixStack matrices, int x, int y, int u, int v, int width, int height, int textureWidth, int textureHeight) {
+        DrawableHelper.drawTexture(
+            matrices, x - options().getHudOptions().getScreenSafeArea(), y + options().getHudOptions().getScreenSafeArea(), u, v, width, height,
+            textureWidth, textureHeight
+        );
     }
 
 }

@@ -67,6 +67,7 @@ public class ControllerButtonBinding {
         .execute((options, pressed) -> useKeybind(options.keyForward, pressed))
         .build()
         .add();
+
     public static final ControllerButtonBinding LOOK_UP = builder()
         .identifier("look_up")
         .category(MOVEMENT_CATEGORY)
@@ -76,7 +77,8 @@ public class ControllerButtonBinding {
         .execute((options, pressed) -> useKeybind(LookKeyBindingView.LOOK_UP.getKeyBinding(), pressed))
         .build()
         .add();
-    private static final ControllerButtonBinding MOVE_BACKWARDS = builder()
+
+    public static final ControllerButtonBinding MOVE_BACKWARDS = builder()
         .identifier("move_backwards")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_LEFT_Y)
@@ -85,7 +87,8 @@ public class ControllerButtonBinding {
         .execute((options, pressed) -> useKeybind(options.keyBack, pressed))
         .build()
         .add();
-    private static final ControllerButtonBinding MOVE_RIGHT = builder()
+
+    public static final ControllerButtonBinding MOVE_RIGHT = builder()
         .identifier("right")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_LEFT_X)
@@ -94,7 +97,8 @@ public class ControllerButtonBinding {
         .execute((options, pressed) -> useKeybind(options.keyRight, pressed))
         .build()
         .add();
-    private static final ControllerButtonBinding MOVE_LEFT = builder()
+
+    public static final ControllerButtonBinding MOVE_LEFT = builder()
         .identifier("move_left")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_LEFT_X)
@@ -103,7 +107,8 @@ public class ControllerButtonBinding {
         .execute((options, pressed) -> useKeybind(options.keyLeft, pressed))
         .build()
         .add();
-    private static final ControllerButtonBinding LOOK_DOWN = builder()
+
+    public static final ControllerButtonBinding LOOK_DOWN = builder()
         .identifier("look_down")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_RIGHT_Y)
@@ -113,7 +118,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding LOOK_RIGHT = builder()
+    public static final ControllerButtonBinding LOOK_RIGHT = builder()
         .identifier("look_right")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_RIGHT_X)
@@ -123,7 +128,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding LOOK_LEFT = builder()
+    public static final ControllerButtonBinding LOOK_LEFT = builder()
         .identifier("look_left")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_AXIS_RIGHT_X)
@@ -133,7 +138,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding OPEN_INVENTORY = builder()
+    public static final ControllerButtonBinding OPEN_INVENTORY = builder()
         .identifier("open_inventory")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_Y)
@@ -141,7 +146,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding PAUSE_GAME = builder()
+    public static final ControllerButtonBinding PAUSE_GAME = builder()
         .identifier("pause_game")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_START)
@@ -149,7 +154,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding SNEAK = builder()
+    public static final ControllerButtonBinding SNEAK = builder()
         .identifier("sneak")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_RIGHT_THUMB)
@@ -157,7 +162,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding SPRINT = builder()
+    public static final ControllerButtonBinding SPRINT = builder()
         .identifier("sprint")
         .category(MOVEMENT_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_LEFT_THUMB)
@@ -165,7 +170,7 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
-    private static final ControllerButtonBinding TOGGLE_PERSPECTIVE = builder()
+    public static final ControllerButtonBinding TOGGLE_PERSPECTIVE = builder()
         .identifier("toggle_perspective")
         .category(GAMEPLAY_CATEGORY)
         .button(GLFW_GAMEPAD_BUTTON_X)
