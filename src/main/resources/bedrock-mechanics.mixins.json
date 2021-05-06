@@ -10,6 +10,7 @@
     "client.gui.hud.InGameHudMixin",
     "client.gui.hud.SubtitlesHudMixin",
     "client.gui.screen.TitleScreenMixin",
+    "client.gui.screen.ingame.HandledScreenMixin",
     "client.options.KeyBindingMixin",
     "client.render.CameraMixin",
     "client.render.entity.model.PlayerEntityModelMixin",

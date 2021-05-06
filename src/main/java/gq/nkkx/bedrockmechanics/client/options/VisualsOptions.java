@@ -18,4 +18,6 @@ public class VisualsOptions implements ConfigData {
 
     private boolean enablePickupAnimation = true;
 
+    private boolean enableInventorySlotHighlighting = true;
+
 }

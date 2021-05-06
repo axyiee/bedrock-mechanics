@@ -32,5 +32,6 @@
   "text.autoconfig.bedrock-mechanics.category.visuals-options": "Visuals",
   "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableEatingAnimation": "Enable eating animation",
   "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableIdleHandAnimation": "Enable idle hand animation",
-  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enablePickupAnimation": "Enable pickup animation"
+  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enablePickupAnimation": "Enable pickup animation",
+  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableInventorySlotHighlighting": "Enable inventory slot highlighting"
 }
