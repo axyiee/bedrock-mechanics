@@ -31,5 +31,6 @@
   "text.autoconfig.bedrock-mechanics.option.hudOptions.bedrockChatStyle": "Bedrock-style chat",
   "text.autoconfig.bedrock-mechanics.category.visuals-options": "Visuals",
   "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableEatingAnimation": "Enable eating animation",
-  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableIdleHandAnimation": "Enable idle hand animation"
+  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enableIdleHandAnimation": "Enable idle hand animation",
+  "text.autoconfig.bedrock-mechanics.option.visualsOptions.enablePickupAnimation": "Enable pickup animation"
 }

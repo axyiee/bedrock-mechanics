@@ -9,6 +9,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 public interface IAnimation extends IMechanic {
 
+    interface Empty extends IMechanic {
+    }
+
     default void play(LivingEntity entity, float tickDelta, PlayerEntityModel model) {
     }
 

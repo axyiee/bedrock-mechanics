@@ -1,5 +1,6 @@
 package gq.nkkx.bedrockmechanics.mixin.client.gui.hud;
 
+import gq.nkkx.bedrockmechanics.client.animations.ItemPickupAnimation;
 import gq.nkkx.bedrockmechanics.client.gui.GuiRenderer;
 import gq.nkkx.bedrockmechanics.client.gui.ScreenSafeArea;
 import net.minecraft.client.font.TextRenderer;
@@ -20,11 +21,20 @@ import static gq.nkkx.bedrockmechanics.BedrockMechanics.options;
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {
 
+    private static final ItemPickupAnimation ITEM_PICKUP_ANIMATION = new ItemPickupAnimation();
+
     @Shadow
     protected abstract void renderHotbarItem(int a, int b, float c, PlayerEntity player, ItemStack item);
 
-    @Shadow
-    private int ticks;
+    @Inject(method = "renderHotbarItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;getCooldown()I"))
+    private void bedrock_mechanics$renderHotbarItem$getCooldown(int x, int y, float tickDelta, PlayerEntity player, ItemStack stack, CallbackInfo callbackInfo) {
+        ITEM_PICKUP_ANIMATION.registerTimeLeft(stack, tickDelta);
+    }
+
+    @Redirect(method = "renderHotbarItem", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;scalef(FFF)V"))
+    private void bedrock_mechanics$renderHotbarItem$scalef(float x, float y, float z) {
+        ITEM_PICKUP_ANIMATION.play(x, y, z);
+    }
 
     @Inject(method = "render", at = @At(value = "RETURN"))
     private void bedrock_mechanics$render(MatrixStack matrices, float tickDelta, CallbackInfo callbackInfo) {

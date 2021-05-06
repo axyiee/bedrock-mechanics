@@ -16,4 +16,6 @@ public class VisualsOptions implements ConfigData {
 
     private boolean enableIdleHandAnimation = true;
 
+    private boolean enablePickupAnimation = true;
+
 }
