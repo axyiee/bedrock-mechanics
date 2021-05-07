@@ -23,6 +23,7 @@
   "text.autoconfig.bedrock-mechanics.option.controllerOptions.iconViewType": "Icon view type",
   "text.autoconfig.bedrock-mechanics.option.controllerOptions.selectedController": "Selected controller",
   "text.autoconfig.bedrock-mechanics.option.controllerOptions.deadZone": "Dead Zone",
+  "text.autoconfig.bedrock-mechanics.option.controllerOptions.virtualMouseSpeed": "Virtual mouse speed",
   "text.autoconfig.bedrock-mechanics.category.mechanics-options": "Mechanics",
   "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.allowFastBlockPlacement": "Allow fast block placement",
   "text.autoconfig.bedrock-mechanics.option.mechanicsOptions.keyBindingLookSpeed": "Key binding look speed",

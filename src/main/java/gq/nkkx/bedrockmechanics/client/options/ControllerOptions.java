@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Data
 @Getter
@@ -23,5 +24,8 @@ public class ControllerOptions implements ConfigData {
     private float deadZone = 0.25f;
 
     private boolean enableControllerHUD = true;
+
+    @ConfigEntry.BoundedDiscrete(min = 10, max = 100)
+    private int virtualMouseSpeed = 50;
 
 }
