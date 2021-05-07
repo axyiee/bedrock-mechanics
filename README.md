@@ -17,9 +17,8 @@ List of planned resources. Those that have already been added are marked with a 
 
 * [x] Controller Support
   * [x] Can add any binding easily through the API
-  * [x] Basic stuff, such as axis and button handling. This includes some essential bindings (walk, look, drop item,
-    etc.)
-  * [ ] Controller HUD
+  * [x] Basic stuff, such as axis and button handling. This includes some essential bindings (walk, look, drop item, etc.)
+  * [x] Controller HUD
   * [ ] Configurable controller bindings
   * [ ] Inventory interaction support
   * [ ] Other menus interaction support

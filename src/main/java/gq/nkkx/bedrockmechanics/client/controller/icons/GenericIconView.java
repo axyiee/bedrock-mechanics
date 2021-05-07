@@ -12,10 +12,10 @@ public class GenericIconView implements InterfacedIconView {
     private static final Map<Integer, ControllerIcon> ICONS = new HashMap<>();
 
     static {
-        ICONS.put(GLFW_GAMEPAD_BUTTON_A, new ControllerIcon("icons/images/rift-a.png"));
-        ICONS.put(GLFW_GAMEPAD_BUTTON_B, new ControllerIcon("icons/images/rift-b.png"));
-        ICONS.put(GLFW_GAMEPAD_BUTTON_X, new ControllerIcon("icons/images/rift-x.png"));
-        ICONS.put(GLFW_GAMEPAD_BUTTON_Y, new ControllerIcon("icons/images/rift-y.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_A, new ControllerIcon("icons/rift-a.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_B, new ControllerIcon("icons/rift-b.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_X, new ControllerIcon("icons/rift-x.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_Y, new ControllerIcon("icons/rift-y.png"));
     }
 
     @Override

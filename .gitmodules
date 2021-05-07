@@ -1,3 +1,0 @@
-[submodule "src/main/resources/bedrock-unicode-characters"]
-	path = src/main/resources/assets/bedrock-mechanics/icons
-	url = https://github.com/TwistedAsylumMC/bedrock-unicode-characters

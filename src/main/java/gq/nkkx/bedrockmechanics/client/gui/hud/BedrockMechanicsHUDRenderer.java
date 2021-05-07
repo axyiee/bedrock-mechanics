@@ -16,8 +16,11 @@ import static gq.nkkx.bedrockmechanics.client.gui.ScreenSafeArea.fill;
 
 public class BedrockMechanicsHUDRenderer implements IRenderer {
 
+    private static final IRenderer CONTROLLER_HUD_RENDERER = new ControllerHUDRenderer();
+
     @Override
     public void render(MatrixStack matrices) {
+        CONTROLLER_HUD_RENDERER.render(matrices);
         if (!BedrockMechanicsHUD.isEnabled()) {
             return;
         }

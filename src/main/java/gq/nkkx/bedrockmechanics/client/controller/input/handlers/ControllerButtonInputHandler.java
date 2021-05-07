@@ -10,8 +10,7 @@ public class ControllerButtonInputHandler extends EnvironmentMatcher {
         ControllerInputManager.getBindings()
             .stream()
             .filter(binding -> !binding.isAxis() && binding.getButton() == button)
-            .findFirst()
-            .ifPresent(binding -> {
+            .forEach(binding -> {
                 if (matches(MinecraftClient.getInstance(), binding.getEnvironment())) {
                     binding.execute(buttonState.isPressed());
                 }

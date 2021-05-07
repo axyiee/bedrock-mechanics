@@ -13,10 +13,10 @@ public class PlayStationIconView implements InterfacedIconView {
     private static final Map<Integer, ControllerIcon> ICONS = new HashMap<>();
 
     static {
-        ICONS.put(GLFW_GAMEPAD_BUTTON_CROSS, new ControllerIcon("icons/images/ps-x.png"));
-        ICONS.put(GLFW_GAMEPAD_BUTTON_CIRCLE, new ControllerIcon("icons/images/ps-o.png"));
-        ICONS.put(GLFW_GAMEPAD_BUTTON_SQUARE, new ControllerIcon("icons/images/ps-square.png"));
-        ICONS.put(GLFW_GAMEPAD_BUTTON_TRIANGLE, new ControllerIcon("icons/images/ps-triangle.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_CROSS, new ControllerIcon("icons/ps-x.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_CIRCLE, new ControllerIcon("icons/ps-o.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_SQUARE, new ControllerIcon("icons/ps-square.png"));
+        ICONS.put(GLFW_GAMEPAD_BUTTON_TRIANGLE, new ControllerIcon("icons/ps-triangle.png"));
     }
 
     private final InterfacedIconView fallbackIconView;

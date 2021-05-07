@@ -1,12 +1,17 @@
 package gq.nkkx.bedrockmechanics.client.controller.input;
 
+import gq.nkkx.bedrockmechanics.client.accessor.IHandledScreen;
 import gq.nkkx.bedrockmechanics.client.accessor.IKeyBinding;
 import gq.nkkx.bedrockmechanics.client.keybindings.LookKeyBindingView;
 import lombok.*;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.options.GameOptions;
 import net.minecraft.client.options.KeyBinding;
 import net.minecraft.client.options.StickyKeyBinding;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.screen.slot.SlotActionType;
 
 import java.util.Objects;
 import java.util.function.BiConsumer;
@@ -178,20 +183,78 @@ public class ControllerButtonBinding {
         .build()
         .add();
 
+    public static final ControllerButtonBinding EXIT = builder()
+        .identifier("exit")
+        .category(INVENTORY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_B)
+        .execute((options, pressed) -> {
+            IHandledScreen screen = getIHandledScreen(pressed);
+            if (screen != null) {
+                screen.bedrock_mechanics$onClose();
+            }
+        })
+        .environment(AccessibleEnvironment.INVENTORY)
+        .build()
+        .add();
+
+    public static final ControllerButtonBinding QUICK_MOVE = builder()
+        .identifier("quick_move")
+        .category(INVENTORY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_Y)
+        .execute((options, pressed) -> onHandledScreenMouseClick(pressed, GLFW_MOUSE_BUTTON_1, SlotActionType.QUICK_MOVE))
+        .environment(AccessibleEnvironment.INVENTORY)
+        .build()
+        .add();
+
+    public static final ControllerButtonBinding INVENTORY_PICKUP = builder()
+        .identifier("inventory_pickup")
+        .category(INVENTORY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_A)
+        .execute((options, pressed) -> onHandledScreenMouseClick(pressed, GLFW_MOUSE_BUTTON_1, SlotActionType.PICKUP))
+        .environment(AccessibleEnvironment.INVENTORY)
+        .build()
+        .add();
+
+    public static final ControllerButtonBinding INVENTORY_PLACE_HALF = builder()
+        .identifier("inventory_place_half")
+        .category(INVENTORY_CATEGORY)
+        .button(GLFW_GAMEPAD_BUTTON_X)
+        .execute((options, pressed) -> onHandledScreenMouseClick(pressed, GLFW_MOUSE_BUTTON_2, SlotActionType.PICKUP))
+        .environment(AccessibleEnvironment.INVENTORY)
+        .build()
+        .add();
+
     private final String identifier;
     private final Category category;
-
     private final boolean isAxis;
     private final boolean isAxisPositive;
 
     @Builder.Default
     private final AccessibleEnvironment environment = AccessibleEnvironment.IN_GAME;
-    @Getter(AccessLevel.NONE)
 
+    @Getter(AccessLevel.NONE)
     private final BiConsumer<GameOptions, Boolean> execute;
 
     @Setter
     private int button;
+
+    private static IHandledScreen getIHandledScreen(boolean pressed) {
+        Screen currentScreen = MinecraftClient.getInstance().currentScreen;
+        if (pressed && currentScreen instanceof HandledScreen) {
+            return (IHandledScreen) currentScreen;
+        }
+        return null;
+    }
+
+    private static void onHandledScreenMouseClick(boolean pressed, int button, SlotActionType action) {
+        IHandledScreen screen = getIHandledScreen(pressed);
+        if (pressed && screen != null) {
+            Slot slot = screen.bedrock_mechanics$getCurrentSlot();
+            if (slot != null) {
+                screen.bedrock_mechanics$onMouseClick(slot, slot.id, button, action);
+            }
+        }
+    }
 
     private static void useKeybind(KeyBinding keyBinding, boolean pressed) {
         if (keyBinding instanceof StickyKeyBinding) {
