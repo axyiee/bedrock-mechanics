@@ -9,7 +9,7 @@ import gq.nkkx.bedrockmechanics.client.controller.input.ControllerButtonBinding;
 import gq.nkkx.bedrockmechanics.client.gui.IRenderer;
 import gq.nkkx.bedrockmechanics.client.gui.ScreenSafeArea;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -37,7 +37,7 @@ public class ControllerHUDRenderer implements IRenderer {
 
     @Override
     public void render(MatrixStack matrices) {
-        if (!options().getControllerOptions().isEnableControllerHUD()) {
+        if (!options().getControllerOptions().isEnableControllerHUD() || MinecraftClient.getInstance().currentScreen != null) {
             return;
         }
         Controller controller = options().getControllerOptions().getSelectedController();
@@ -46,11 +46,15 @@ public class ControllerHUDRenderer implements IRenderer {
         }
 
         InterfacedIconView view = IconView.byType(options().getControllerOptions().getIconViewType());
-        if (MinecraftClient.getInstance().currentScreen == null) {
-            drawBindings(matrices, 0, view, leftBindings);
-        } else if (MinecraftClient.getInstance().currentScreen instanceof InventoryScreen) {
-            drawBindings(matrices, 0, view, inventoryLeftBindings);
+        drawBindings(matrices, 0, view, leftBindings);
+    }
+
+    public void renderInInventory() {
+        if (!options().getControllerOptions().isEnableControllerHUD() || !(MinecraftClient.getInstance().currentScreen instanceof HandledScreen)) {
+            return;
         }
+        InterfacedIconView view = IconView.byType(options().getControllerOptions().getIconViewType());
+        drawBindings(new MatrixStack(), 0, view, inventoryLeftBindings);
     }
 
     private void drawBindings(MatrixStack matrices, int x, InterfacedIconView view, List<ControllerButtonBinding> bindings) {

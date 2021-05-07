@@ -20,7 +20,7 @@ List of planned resources. Those that have already been added are marked with a 
   * [x] Basic stuff, such as axis and button handling. This includes some essential bindings (walk, look, drop item, etc.)
   * [x] Controller HUD
   * [ ] Configurable controller bindings
-  * [ ] Inventory interaction support
+  * [x] Inventory interaction support
   * [ ] Other menus interaction support
 * [x] Paper doll
 * [x] Show location and FPS under paper doll
@@ -59,7 +59,10 @@ List of planned resources. Those that have already been added are marked with a 
 
 ## Credits
 
-Some parts of the code are taken from the [BedrockIfy][bedrockIfy] project.
+Some parts of the code are taken from the [BedrockIfy][bedrockIfy] project. Some virtual mouse rendering code values are taken from
+the [LambdaControls][lambda-controls] project.
+
+[lambda-controls]: https://github.com/LambdAurora/LambdaControls
 
 [bedrockIfy]: https://github.com/juancarloscp52/BedrockIfy
 

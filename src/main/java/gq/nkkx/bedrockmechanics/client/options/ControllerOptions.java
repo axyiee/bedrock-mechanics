@@ -25,7 +25,7 @@ public class ControllerOptions implements ConfigData {
 
     private boolean enableControllerHUD = true;
 
-    @ConfigEntry.BoundedDiscrete(min = 10, max = 100)
-    private int virtualMouseSpeed = 50;
+    @ConfigEntry.BoundedDiscrete(min = 2, max = 10)
+    private int virtualMouseSpeed = 2;
 
 }

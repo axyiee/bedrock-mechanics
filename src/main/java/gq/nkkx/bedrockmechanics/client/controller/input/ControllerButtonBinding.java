@@ -190,7 +190,7 @@ public class ControllerButtonBinding {
         .execute((options, pressed) -> {
             IHandledScreen screen = getIHandledScreen(pressed);
             if (screen != null) {
-                screen.bedrock_mechanics$onClose();
+                ((HandledScreen) screen).onClose();
             }
         })
         .environment(AccessibleEnvironment.INVENTORY)

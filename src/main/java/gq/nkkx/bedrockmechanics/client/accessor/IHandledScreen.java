@@ -9,6 +9,8 @@ public interface IHandledScreen {
 
     Slot bedrock_mechanics$getCurrentSlot();
 
-    void bedrock_mechanics$onClose();
+    int bedrock_mechanics$getX();
+
+    int bedrock_mechanics$getY();
 
 }

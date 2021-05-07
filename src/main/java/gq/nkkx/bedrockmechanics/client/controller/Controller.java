@@ -1,5 +1,6 @@
 package gq.nkkx.bedrockmechanics.client.controller;
 
+import gq.nkkx.bedrockmechanics.client.controller.input.ControllerVirtualMouse;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWGamepadState;
 
@@ -9,6 +10,8 @@ import java.util.Objects;
  * A class that represents a controller.
  */
 public class Controller {
+
+    public static final ControllerVirtualMouse VIRTUAL_MOUSE = new ControllerVirtualMouse();
 
     private final int id;
     private String cachedName;

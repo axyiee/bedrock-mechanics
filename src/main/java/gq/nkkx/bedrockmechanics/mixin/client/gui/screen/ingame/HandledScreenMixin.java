@@ -2,6 +2,7 @@ package gq.nkkx.bedrockmechanics.mixin.client.gui.screen.ingame;
 
 import gq.nkkx.bedrockmechanics.BedrockMechanics;
 import gq.nkkx.bedrockmechanics.client.accessor.IHandledScreen;
+import gq.nkkx.bedrockmechanics.client.controller.Controller;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -10,9 +11,12 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(HandledScreen.class)
 public abstract class HandledScreenMixin extends DrawableHelper implements IHandledScreen {
@@ -22,6 +26,12 @@ public abstract class HandledScreenMixin extends DrawableHelper implements IHand
     // color taken from bedrockify, since hexadecimal colors does not work here.
     // https://github.com/juancarloscp52/BedrockIfy/blob/7cbdf41cf5eb24967d0c64110b3a6a7f2101148a/src/main/java/me/juancarloscp52/bedrockify/BedrockifySettings.java#L22
     private static final int COLOR = 64 + (170 << 8) + (109 << 16) + (255 << 24);
+
+    @Accessor("x")
+    public abstract int bedrock_mechanics$getX();
+
+    @Accessor("y")
+    public abstract int bedrock_mechanics$getY();
 
     @Shadow
     protected Slot focusedSlot;
@@ -34,9 +44,6 @@ public abstract class HandledScreenMixin extends DrawableHelper implements IHand
 
     @Invoker("onMouseClick")
     public abstract void bedrock_mechanics$onMouseClick(Slot slot, int invSlot, int clickData, SlotActionType actionType);
-
-    @Invoker("onClose")
-    public abstract void bedrock_mechanics$onClose();
 
     @Override
     public Slot bedrock_mechanics$getCurrentSlot() {
@@ -65,5 +72,10 @@ public abstract class HandledScreenMixin extends DrawableHelper implements IHand
         fillGradient(matrices, xStart, yStart, xEnd, yEnd, colorStart, colorEnd);
     }
 
+    @Inject(method = "onClose", at = @At(value = "RETURN"))
+    private void bedrock_mechanics$onClose(CallbackInfo callbackInfo) {
+        Controller.VIRTUAL_MOUSE.resetMousePosition();
+        Controller.VIRTUAL_MOUSE.resetMouseTarget();
+    }
 
 }

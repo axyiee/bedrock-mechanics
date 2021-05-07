@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "client": [
     "client.MinecraftClientMixin",
+    "client.MouseMixin",
     "client.gui.hud.BossBarHudMixin",
     "client.gui.hud.ChatHudMixin",
     "client.gui.hud.InGameHudMixin",

@@ -34,4 +34,9 @@ public abstract class MinecraftClientMixin implements IMinecraftClient {
         BedrockMechanicsClient.render((MinecraftClient) (Object) this);
     }
 
+    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/GameRenderer;render(FJZ)V", shift = At.Shift.AFTER))
+    private void bedrock_mechanics$render$afterGameRenderer(CallbackInfo callbackInfo) {
+        BedrockMechanicsClient.render$afterGameRenderer((MinecraftClient) (Object) this);
+    }
+
 }
