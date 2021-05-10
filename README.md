@@ -45,7 +45,7 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Bedrock-style screens
     * [ ] Title screen
     * [ ] Loading world screen
-  * [ ] Background for action bar and held item tooltipp
+  * [ ] Background for action bar and held item tooltip
 * [x] Bedrock mechanics
   * [x] Sneaking activates shield
   * [ ] Accurate effect timer (don't show it as infinite)
@@ -55,6 +55,8 @@ List of planned resources. Those that have already been added are marked with a 
   * [ ] Fill cauldrons with lava
   * ❌ ~~Cauldrons filled with water can extinguish fire in players~~ ([#1][first-issue])
   * [ ] Recipes
+  * [ ] World generation
+    * [ ] More tree decorations
 
 * [x] Utility and/or non-bedrock related
   * [x] Screen safe area
