@@ -4,6 +4,7 @@
   "bedrock-mechanics.controller.connected": "Controller connected",
   "bedrock-mechanics.controller.disconnected": "Controller disconnected",
   "bedrock-mechanics.category.gameplay": "Gameplay",
+  "bedrock-mechanics.bindings": "Bindings",
   "bedrock-mechanics.bindings.look_up": "Look Up",
   "bedrock-mechanics.bindings.look_down": "Look Down",
   "bedrock-mechanics.bindings.look_left": "Look Left",
